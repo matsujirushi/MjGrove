@@ -3,7 +3,7 @@
 GroveConnectorDIO D38(38, 39);
 
 void setup() {
-  pinMode(38, OUTPUT);
+  DslRcc::AHB1_GPIOC_Enable();
 
   D38.P1().SetPullUpDown(GroveGpio::PUPD_NO);
   D38.P1().SetOutType(GroveGpio::OUT_TYPE_PUSH_PULL);
