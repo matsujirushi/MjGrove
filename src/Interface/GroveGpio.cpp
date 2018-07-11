@@ -11,7 +11,7 @@ void GroveGpio::SetMode(GroveGpio::ModeType mode)
 	case MODE_OUTPUT:
 		SetPullUpDown(HalGpio::PUPD_NO);
 		SetOutType(HalGpio::OUT_TYPE_PUSH_PULL);
-		SetOutSpeed(HalGpio::OUT_SPEED_LOW);
+		SetOutSpeed(HalGpio::OUT_SPEED_VERY_HIGH);
 		HalGpio::SetMode(HalGpio::MODE_OUTPUT);
 		break;
 	}
