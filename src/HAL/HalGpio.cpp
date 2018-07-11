@@ -1,12 +1,12 @@
-#include "GroveGpio.h"
+#include "HalGpio.h"
 
-GroveGpio::GroveGpio(int pin)
+HalGpio::HalGpio(int pin)
 {
 	_GpioReg = (GPIO_TypeDef*)(AHB1PERIPH_BASE + 0x0400u * (pin / 16));
 	_GpioPos = pin % 16;
 }
 
-void GroveGpio::SetPullUpDown(GroveGpio::PullUpPullDownType pupd)
+void HalGpio::SetPullUpDown(HalGpio::PullUpPullDownType pupd)
 {
 	uint32_t temp = _GpioReg->PUPDR;
 	temp &= ~(0x3u << (_GpioPos * 2));
@@ -14,7 +14,7 @@ void GroveGpio::SetPullUpDown(GroveGpio::PullUpPullDownType pupd)
 	_GpioReg->PUPDR = temp;
 }
 
-void GroveGpio::SetOutType(GroveGpio::OutTypeType outType)
+void HalGpio::SetOutType(HalGpio::OutTypeType outType)
 {
 	uint32_t temp = _GpioReg->OTYPER;
 	temp &= ~(0x1u    << _GpioPos);
@@ -22,7 +22,7 @@ void GroveGpio::SetOutType(GroveGpio::OutTypeType outType)
 	_GpioReg->OTYPER = temp;
 }
 
-void GroveGpio::SetOutSpeed(GroveGpio::OutSpeedType outSpeed)
+void HalGpio::SetOutSpeed(HalGpio::OutSpeedType outSpeed)
 {
 	uint32_t temp = _GpioReg->OSPEEDR;
 	temp &= ~(0x3u     << (_GpioPos * 2));
@@ -30,7 +30,7 @@ void GroveGpio::SetOutSpeed(GroveGpio::OutSpeedType outSpeed)
 	_GpioReg->OSPEEDR = temp;
 }
 
-void GroveGpio::SetMode(GroveGpio::ModeType mode)
+void HalGpio::SetMode(HalGpio::ModeType mode)
 {
 	uint32_t temp = _GpioReg->MODER;
 	temp &= ~(0x3u << (_GpioPos * 2));

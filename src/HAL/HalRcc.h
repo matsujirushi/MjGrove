@@ -2,10 +2,10 @@
 
 #include <stm32f4xx_hal.h>
 
-class DslRcc
+class HalRcc
 {
 public:
-	DslRcc() = delete;
+	HalRcc() = delete;
 
 	static void AHB1_GPIOA_Enable()
 	{

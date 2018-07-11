@@ -2,7 +2,7 @@
 
 #include <stm32f4xx_hal.h>
 
-class GroveGpio
+class HalGpio
 {
 private:
 	GPIO_TypeDef* _GpioReg;
@@ -36,7 +36,7 @@ public:
 	};
 
 public:
-	GroveGpio(int pin);
+	HalGpio(int pin);
 
 	void SetPullUpDown(PullUpPullDownType pupd);
 	void SetOutType(OutTypeType outType);
