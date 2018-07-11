@@ -1,13 +1,13 @@
 #pragma once
 
 #include "GroveConnector.h"
-#include "../HAL/HalGpio.h"
+#include "../Interface/GroveGpio.h"
 
 class GroveConnectorDIO : public GroveConnector
 {
 private:
-	HalGpio _Pin1;
-	HalGpio _Pin2;
+	GroveGpio _Pin1;
+	GroveGpio _Pin2;
 
 public:
 	GroveConnectorDIO(int pin1, int pin2) : _Pin1(pin1), _Pin2(pin2)
@@ -18,12 +18,12 @@ public:
 	{
 	}
 
-	HalGpio& P1()
+	GroveGpio& P1()
 	{
 		return _Pin1;
 	}
 
-	HalGpio& P2()
+	GroveGpio& P2()
 	{
 		return _Pin2;
 	}
