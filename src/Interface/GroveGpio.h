@@ -23,4 +23,14 @@ public:
 		HalGpio::Write(on);
 	}
 
+	bool Read() const
+	{
+		return HalGpio::Read();
+	}
+
+	bool ReadOutput() const
+	{
+		return HalGpio::ReadOutput();
+	}
+
 };

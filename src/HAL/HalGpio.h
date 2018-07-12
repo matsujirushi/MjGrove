@@ -79,4 +79,14 @@ public:
 		_GpioReg->BSRR = 1u << (on ? _GpioPos : _GpioPos + 16);
 	}
 
+	bool Read() const
+	{
+		return (_GpioReg->IDR & 1u << _GpioPos) != 0 ? true : false;
+	}
+
+	bool ReadOutput() const
+	{
+		return (_GpioReg->ODR & 1u << _GpioPos) != 0 ? true : false;
+	}
+
 };
