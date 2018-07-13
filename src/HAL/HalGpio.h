@@ -5,6 +5,7 @@
 class HalGpio
 {
 private:
+	static uint16_t _GpioInstance[];
 	GPIO_TypeDef* _GpioReg;
 	uint16_t _GpioPos;
 
@@ -36,11 +37,7 @@ public:
 	};
 
 public:
-	HalGpio(int pin)
-	{
-		_GpioReg = (GPIO_TypeDef*)(AHB1PERIPH_BASE + 0x0400u * (pin / 16));
-		_GpioPos = pin % 16;
-	}
+	HalGpio(int pin);
 
 	void SetPullUpDown(PullUpPullDownType pupd)
 	{

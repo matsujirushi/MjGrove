@@ -7,114 +7,14 @@ class HalRcc
 public:
 	HalRcc() = delete;
 
-	static void AHB1_GPIOA_Enable()
+	static void AHB1_GPIOx_Enable(int port)
 	{
-		RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
+		RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN << port;
 	}
 
-	static void AHB1_GPIOB_Enable()
+	static void AHB1_GPIOA_Disable(int port)
 	{
-		RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN;
-	}
-
-	static void AHB1_GPIOC_Enable()
-	{
-		RCC->AHB1ENR |= RCC_AHB1ENR_GPIOCEN;
-	}
-
-	static void AHB1_GPIOD_Enable()
-	{
-		RCC->AHB1ENR |= RCC_AHB1ENR_GPIODEN;
-	}
-
-	static void AHB1_GPIOE_Enable()
-	{
-		RCC->AHB1ENR |= RCC_AHB1ENR_GPIOEEN;
-	}
-
-	static void AHB1_GPIOF_Enable()
-	{
-		RCC->AHB1ENR |= RCC_AHB1ENR_GPIOFEN;
-	}
-
-	static void AHB1_GPIOG_Enable()
-	{
-		RCC->AHB1ENR |= RCC_AHB1ENR_GPIOGEN;
-	}
-
-	static void AHB1_GPIOH_Enable()
-	{
-		RCC->AHB1ENR |= RCC_AHB1ENR_GPIOHEN;
-	}
-
-	static void AHB1_GPIOI_Enable()
-	{
-		RCC->AHB1ENR |= RCC_AHB1ENR_GPIOIEN;
-	}
-
-	static void AHB1_GPIOJ_Enable()
-	{
-		RCC->AHB1ENR |= RCC_AHB1ENR_GPIOJEN;
-	}
-
-	static void AHB1_GPIOK_Enable()
-	{
-		RCC->AHB1ENR |= RCC_AHB1ENR_GPIOKEN;
-	}
-
-	static void AHB1_GPIOA_Disable()
-	{
-		RCC->AHB1ENR &= ~RCC_AHB1ENR_GPIOAEN;
-	}
-
-	static void AHB1_GPIOB_Disable()
-	{
-		RCC->AHB1ENR &= ~RCC_AHB1ENR_GPIOBEN;
-	}
-
-	static void AHB1_GPIOC_Disable()
-	{
-		RCC->AHB1ENR &= ~RCC_AHB1ENR_GPIOCEN;
-	}
-
-	static void AHB1_GPIOD_Disable()
-	{
-		RCC->AHB1ENR &= ~RCC_AHB1ENR_GPIODEN;
-	}
-
-	static void AHB1_GPIOE_Disable()
-	{
-		RCC->AHB1ENR &= ~RCC_AHB1ENR_GPIOEEN;
-	}
-
-	static void AHB1_GPIOF_Disable()
-	{
-		RCC->AHB1ENR &= ~RCC_AHB1ENR_GPIOFEN;
-	}
-
-	static void AHB1_GPIOG_Disable()
-	{
-		RCC->AHB1ENR &= ~RCC_AHB1ENR_GPIOGEN;
-	}
-
-	static void AHB1_GPIOH_Disable()
-	{
-		RCC->AHB1ENR &= ~RCC_AHB1ENR_GPIOHEN;
-	}
-
-	static void AHB1_GPIOI_Disable()
-	{
-		RCC->AHB1ENR &= ~RCC_AHB1ENR_GPIOIEN;
-	}
-
-	static void AHB1_GPIOJ_Disable()
-	{
-		RCC->AHB1ENR &= ~RCC_AHB1ENR_GPIOJEN;
-	}
-
-	static void AHB1_GPIOK_Disable()
-	{
-		RCC->AHB1ENR &= ~RCC_AHB1ENR_GPIOKEN;
+		RCC->AHB1ENR &= ~(RCC_AHB1ENR_GPIOAEN << port);
 	}
 
 };

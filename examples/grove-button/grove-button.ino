@@ -8,7 +8,6 @@ GroveConnectorDIO D38(38, 39);
 void setup() {
   SerialUSB.begin(115200);
   
-  HalRcc::AHB1_GPIOC_Enable();
   D38.P1().SetMode(GroveGpio::MODE_INPUT);
 }
 
