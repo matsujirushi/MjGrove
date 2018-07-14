@@ -1,4 +1,8 @@
+#if defined ARDUINO_WIO_3G
 #include <Wio3GforArduino.h>  // https://github.com/SeeedJP/Wio_3G_for_Arduino
+#else
+#error "This board is not supported."
+#endif
 #include <Grove.h>
 
 #define INTERVAL    (100)
@@ -17,4 +21,3 @@ void loop() {
   
   delay(INTERVAL);
 }
-
