@@ -1,10 +1,13 @@
+// BOARD Seeed Wio 3G
+// GROVE D38 <-> Grove - Buzzer (SKU#107020000)
+
 #include <Grove.h>
 
 #define BUZZER_ON_TIME  (200)
 #define BUZZER_OFF_TIME (800)
 
-GroveConnectorDIO D38(38, 39);
-GroveBuzzer Buzzer(&D38);
+GroveBoard Board;
+GroveBuzzer Buzzer(&Board.D38);
 
 void setup() {
 }
