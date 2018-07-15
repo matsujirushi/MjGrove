@@ -8,3 +8,4 @@
 #include "Board/GroveBoardWio3G.h"
 
 #include "Module/GroveBuzzer.h"
+#include "Module/GroveButton.h"
