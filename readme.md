@@ -7,6 +7,13 @@ Groveƒ‚ƒWƒ…[ƒ‹‚ÌƒNƒ‰ƒX‚ÆAGrove‘Î‰ƒ{[ƒh‚ÌƒNƒ‰ƒX‚ª—pˆÓ‚³‚ê‚Ä‚¨‚èA‚±‚Ì2‚Â‚ÌƒNƒ
 
 ‚Ü‚¾ŠJ”­‚É’…è‚µ‚½‚Î‚©‚è‚È‚Ì‚ÅAŒİŠ·«‚Ì‚È‚¢**”j‰ó“I•ÏX**‚ª”­¶‚·‚éê‡‚ª‚ ‚è‚Ü‚·B‚²—¹³‚­‚¾‚³‚¢B
 
+## ƒ[ƒhƒ}ƒbƒv
+
+2018/7 ... [Grove IoT ƒXƒ^[ƒ^[ƒLƒbƒg for SORACOM](https://soracom.jp/products/kit/grovestarter_kit_3g_soracom_edition/)‚Ì7íƒZƒ“ƒT[‚ğ’Ç‰Á  
+2018/7 ... Wio LTE JP Version‘Î‰  
+2018/8 ... Grove - Rotary Angle Sensor‚ğ’Ç‰Á  
+2018/8 ... Wio LTE M1/NB1(UG96)‘Î‰  
+
 ## ‘Î‰‚µ‚Ä‚¢‚éGroveƒ{[ƒh‚ÆGroveƒ‚ƒWƒ…[ƒ‹
 
 ### Groveƒ{[ƒhƒNƒ‰ƒX
@@ -20,5 +27,6 @@ Groveƒ‚ƒWƒ…[ƒ‹‚ÌƒNƒ‰ƒX‚ÆAGrove‘Î‰ƒ{[ƒh‚ÌƒNƒ‰ƒX‚ª—pˆÓ‚³‚ê‚Ä‚¨‚èA‚±‚Ì2‚Â‚ÌƒNƒ
 |Class|SKU|Name|
 |:--|:--|:--|
 |GroveBuzzer|107020000|[Grove - Buzzer](http://wiki.seeedstudio.com/Grove-Buzzer/)|
-|GroveButon|101020003|[Grove - Button](http://wiki.seeedstudio.com/Grove-Button/)|
+|GroveButton|101020003|[Grove - Button](http://wiki.seeedstudio.com/Grove-Button/)|
 |(ì¬’†)|101020054|[Grove - 3-Axis Digital Accelerometer(}16g)](http://wiki.seeedstudio.com/Grove-3-Axis_Digital_Accelerometer-16g/)|
+
