@@ -5,27 +5,17 @@
 
 class GroveConnectorDIO : public GroveConnector
 {
-private:
-	GroveGpio _Pin1;
-	GroveGpio _Pin2;
+public:
+	GroveGpio P1;
+	GroveGpio P2;
 
 public:
-	GroveConnectorDIO(int pin1, int pin2) : _Pin1(pin1), _Pin2(pin2)
+	GroveConnectorDIO(int pin1, int pin2) : P1(pin1), P2(pin2)
 	{
 	}
 
 	~GroveConnectorDIO()
 	{
-	}
-
-	GroveGpio& P1()
-	{
-		return _Pin1;
-	}
-
-	GroveGpio& P2()
-	{
-		return _Pin2;
 	}
 
 };
