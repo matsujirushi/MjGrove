@@ -28,5 +28,4 @@ Groveƒ‚ƒWƒ…[ƒ‹‚ÌƒNƒ‰ƒX‚ÆAGrove‘Î‰ƒ{[ƒh‚ÌƒNƒ‰ƒX‚ª—pˆÓ‚³‚ê‚Ä‚¨‚èA‚±‚Ì2‚Â‚ÌƒNƒ
 |:--|:--|:--|
 |GroveBuzzer|107020000|[Grove - Buzzer](http://wiki.seeedstudio.com/Grove-Buzzer/)|
 |GroveButton|101020003|[Grove - Button](http://wiki.seeedstudio.com/Grove-Button/)|
-|(ì¬’†)|101020054|[Grove - 3-Axis Digital Accelerometer(}16g)](http://wiki.seeedstudio.com/Grove-3-Axis_Digital_Accelerometer-16g/)|
-
+|GroveAccelerometer16G|101020054|[Grove - 3-Axis Digital Accelerometer(}16g)](http://wiki.seeedstudio.com/Grove-3-Axis_Digital_Accelerometer-16g/)|
