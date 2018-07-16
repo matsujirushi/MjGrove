@@ -14,6 +14,8 @@ GroveBoard Board;
 GroveButton Button(&Board.D38);
 
 void setup() {
+  delay(200);
+
   SerialUSB.begin(115200);
 }
 

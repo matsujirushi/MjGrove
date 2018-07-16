@@ -10,6 +10,7 @@ GroveBoard Board;
 GroveBuzzer Buzzer(&Board.D38);
 
 void setup() {
+  delay(200);
 }
 
 void loop() {

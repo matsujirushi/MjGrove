@@ -31,8 +31,8 @@ void loop() {
   float x;
   float y;
   float z;
-
   Accel.ReadXYZ(&x, &y, &z);
+
   SerialUSB.print(x);
   SerialUSB.print(' ');
   SerialUSB.print(y);
