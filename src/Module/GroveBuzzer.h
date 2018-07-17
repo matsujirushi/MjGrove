@@ -9,30 +9,30 @@
 class GroveBuzzer
 {
 private:
-	GroveConnectorDIO* _Connector;
+	GroveGpio* _Pin;
 
 public:
-	GroveBuzzer(GroveConnectorDIO* connector) : _Connector(connector)
+	GroveBuzzer(GroveConnectorDIO* connector)
 	{
-		_Connector->P1.SetMode(GroveGpio::MODE_OUTPUT);
-		_Connector->P1.Write(false);
-
-		_Connector->P2.SetMode(GroveGpio::MODE_INPUT);
+		_Pin = &connector->P1;
+		_Pin->Enable();
+		_Pin->SetMode(GroveGpio::MODE_OUTPUT);
+		_Pin->Write(false);
 	}
 
 	void On()
 	{
-		_Connector->P1.Write(true);
+		_Pin->Write(true);
 	}
 
 	void Off()
 	{
-		_Connector->P1.Write(false);
+		_Pin->Write(false);
 	}
 
 	bool IsOn() const
 	{
-		return _Connector->P1.ReadOutput();
+		return _Pin->ReadOutput();
 	}
 
 };

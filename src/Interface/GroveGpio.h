@@ -16,6 +16,11 @@ public:
 	{
 	}
 
+	void Enable()
+	{
+		HalGpio::Enable();
+	}
+
 	void SetMode(ModeType mode);
 
 	void Write(bool on)

@@ -5,9 +5,9 @@
 class HalGpio
 {
 private:
-	static uint16_t _GpioInstance[];
-	GPIO_TypeDef* _GpioReg;
+	uint8_t _GpioPort;
 	uint16_t _GpioPos;
+	GPIO_TypeDef* _GpioReg;
 
 public:
 	enum PullUpPullDownType
@@ -38,6 +38,8 @@ public:
 
 public:
 	HalGpio(int pin);
+
+	void Enable();
 
 	void SetPullUpDown(PullUpPullDownType pupd)
 	{

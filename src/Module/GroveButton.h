@@ -9,18 +9,19 @@
 class GroveButton
 {
 private:
-	GroveConnectorDIO* _Connector;
+	GroveGpio* _Pin;
 
 public:
-	GroveButton(GroveConnectorDIO* connector) : _Connector(connector)
+	GroveButton(GroveConnectorDIO* connector)
 	{
-		_Connector->P1.SetMode(GroveGpio::MODE_INPUT);
-		_Connector->P2.SetMode(GroveGpio::MODE_INPUT);
+		_Pin = &connector->P1;
+		_Pin->Enable();
+		_Pin->SetMode(GroveGpio::MODE_INPUT);
 	}
 
 	bool IsOn() const
 	{
-		return _Connector->P1.Read();
+		return _Pin->Read();
 	}
 
 };

@@ -1,9 +1,5 @@
 #include "GroveI2C.h"
 
-GroveI2C::GroveI2C(TwoWire* wire) : _Wire(wire)
-{
-}
-
 void GroveI2C::Write(uint8_t slaveAddress, const uint8_t* data, int dataSize)
 {
 	_Wire->beginTransmission(slaveAddress);

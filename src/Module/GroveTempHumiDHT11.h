@@ -20,7 +20,6 @@ private:
 public:
 	GroveTempHumiDHT11(GroveConnectorDIO* connector);
 
-	void Initialize();
 	void Read(float* temperature, float* humidity);
 
 };

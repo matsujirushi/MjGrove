@@ -68,10 +68,7 @@ bool GroveTempHumiDHT11::DHT11Check(const uint8_t* data, int dataSize)
 GroveTempHumiDHT11::GroveTempHumiDHT11(GroveConnectorDIO* connector)
 {
 	_Pin = &connector->P1;
-}
-
-void GroveTempHumiDHT11::Initialize()
-{
+	_Pin->Enable();
 	DHT11Init(_Pin);
 }
 
