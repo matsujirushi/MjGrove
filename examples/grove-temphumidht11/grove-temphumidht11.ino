@@ -15,15 +15,13 @@ void setup() {
 }
 
 void loop() {
-  float temp;
-  float humi;
-  TempHumi.Read(&temp, &humi);
+  TempHumi.Read();
   
   SerialUSB.print("Current humidity = ");
-  SerialUSB.print(humi);
+  SerialUSB.print(TempHumi.Humidity);
   SerialUSB.print("%  ");
   SerialUSB.print("temperature = ");
-  SerialUSB.print(temp);
+  SerialUSB.print(TempHumi.Temperature);
   SerialUSB.println("C");
 
   delay(INTERVAL);

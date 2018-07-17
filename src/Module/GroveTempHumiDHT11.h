@@ -18,8 +18,12 @@ private:
 	static bool DHT11Check(const uint8_t* data, int dataSize);
 
 public:
+	float Temperature;
+	float Humidity;
+
+public:
 	GroveTempHumiDHT11(GroveConnectorDIO* connector);
 
-	void Read(float* temperature, float* humidity);
+	void Read();
 
 };

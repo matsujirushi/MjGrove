@@ -72,7 +72,7 @@ GroveTempHumiDHT11::GroveTempHumiDHT11(GroveConnectorDIO* connector)
 	DHT11Init(_Pin);
 }
 
-void GroveTempHumiDHT11::Read(float* temperature, float* humidity)
+void GroveTempHumiDHT11::Read()
 {
 	uint8_t data[5];
 
@@ -84,6 +84,6 @@ void GroveTempHumiDHT11::Read(float* temperature, float* humidity)
 	if (data[1] >= 10) throw "exception";
 	if (data[3] >= 10) throw "exception";
 
-	*humidity = (float)data[0] + (float)data[1] / 10.0f;
-	*temperature = (float)data[2] + (float)data[3] / 10.0f;
+	Humidity = (float)data[0] + (float)data[1] / 10.0f;
+	Temperature = (float)data[2] + (float)data[3] / 10.0f;
 }
