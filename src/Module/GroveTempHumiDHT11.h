@@ -4,9 +4,10 @@
 
 #pragma once
 
+#include "GroveModule.h"
 #include "../Connector/GroveConnectorDIO.h"
 
-class GroveTempHumiDHT11
+class GroveTempHumiDHT11 : public GroveModule
 {
 private:
 	GroveGpio* _Pin;
@@ -22,8 +23,12 @@ public:
 	float Humidity;
 
 public:
-	GroveTempHumiDHT11(GroveConnectorDIO* connector);
+	GroveTempHumiDHT11(GroveConnectorDIO* connector)
+	{
+		_Pin = &connector->P1;
+	}
 
+	void Init();
 	void Read();
 
 };

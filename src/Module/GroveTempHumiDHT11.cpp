@@ -65,10 +65,8 @@ bool GroveTempHumiDHT11::DHT11Check(const uint8_t* data, int dataSize)
 	return data[dataSize - 1] == sum;
 }
 
-GroveTempHumiDHT11::GroveTempHumiDHT11(GroveConnectorDIO* connector)
+void GroveTempHumiDHT11::Init()
 {
-	_Pin = &connector->P1;
-	_Pin->Enable();
 	DHT11Init(_Pin);
 }
 

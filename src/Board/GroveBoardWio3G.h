@@ -3,6 +3,9 @@
 #if defined ARDUINO_WIO_3G
 
 #include <Wio3GforArduino.h>  // https://github.com/SeeedJP/Wio_3G_for_Arduino
+
+typedef Wio3G WioCellular;
+
 #include "../Connector/GroveConnectorDIO.h"
 #include "../Connector/GroveConnectorI2C.h"
 

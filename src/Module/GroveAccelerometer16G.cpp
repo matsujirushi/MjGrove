@@ -5,11 +5,6 @@
 #define REG_POWER_CTL (0x2d)
 #define REG_DATAX0    (0x32)
 
-GroveAccelerometer16G::GroveAccelerometer16G(GroveConnectorI2C* connector)
-{
-	_Device = connector->NewGroveI2CDevice(I2C_ADDRESS);
-}
-
 void GroveAccelerometer16G::Init()
 {
 	uint8_t writeData[2];
@@ -18,7 +13,7 @@ void GroveAccelerometer16G::Init()
 	_Device->Write(writeData, sizeof(writeData));
 }
 
-void GroveAccelerometer16G::ReadXYZ()
+void GroveAccelerometer16G::Read()
 {
 	uint8_t writeData[1];
 	writeData[0] = REG_DATAX0;

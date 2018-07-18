@@ -10,8 +10,10 @@ GroveButton Button(&Board.D38);
 
 void setup() {
   delay(200);
-
   SerialUSB.begin(115200);
+
+  Board.D38.Enable();
+  Button.Init();
 }
 
 void loop() {

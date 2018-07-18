@@ -3,8 +3,6 @@
 class GroveConnector
 {
 public:
-	virtual ~GroveConnector()
-	{
-	}
+	virtual void Enable() = 0;
 
 };

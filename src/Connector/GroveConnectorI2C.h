@@ -14,10 +14,6 @@ public:
 	{
 	}
 
-	~GroveConnectorI2C()
-	{
-	}
-
 	void Enable()
 	{
 		_I2C.Enable();

@@ -5,18 +5,13 @@
 
 #define INTERVAL    (100)
 
-#if defined ARDUINO_WIO_3G
-Wio3G Wio;
-#else
-#error "This board is not supported."
-#endif
+WioCellular Wio;
 
 GroveBoard Board;
 GroveAccelerometer16G Accel(&Board.I2C);
 
 void setup() {
   delay(200);
-  
   SerialUSB.begin(115200);
 
   Wio.Init();
@@ -28,7 +23,7 @@ void setup() {
 }
 
 void loop() {
-  Accel.ReadXYZ();
+  Accel.Read();
 
   SerialUSB.print(Accel.X);
   SerialUSB.print(' ');

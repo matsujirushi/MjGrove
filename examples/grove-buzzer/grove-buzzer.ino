@@ -11,6 +11,9 @@ GroveBuzzer Buzzer(&Board.D38);
 
 void setup() {
   delay(200);
+
+  Board.D38.Enable();
+  Buzzer.Init();
 }
 
 void loop() {

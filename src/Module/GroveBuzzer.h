@@ -4,9 +4,10 @@
 
 #pragma once
 
+#include "GroveModule.h"
 #include "../Connector/GroveConnectorDIO.h"
 
-class GroveBuzzer
+class GroveBuzzer : public GroveModule
 {
 private:
 	GroveGpio* _Pin;
@@ -15,7 +16,10 @@ public:
 	GroveBuzzer(GroveConnectorDIO* connector)
 	{
 		_Pin = &connector->P1;
-		_Pin->Enable();
+	}
+
+	void Init()
+	{
 		_Pin->SetMode(GroveGpio::MODE_OUTPUT);
 		_Pin->Write(false);
 	}

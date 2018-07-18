@@ -4,9 +4,10 @@
 
 #pragma once
 
+#include "GroveModule.h"
 #include "../Connector/GroveConnectorI2C.h"
 
-class GroveAccelerometer16G
+class GroveAccelerometer16G : public GroveModule
 {
 private:
 	GroveI2CDevice* _Device;
@@ -17,9 +18,12 @@ public:
 	float Z;
 
 public:
-	GroveAccelerometer16G(GroveConnectorI2C* connector);
+	GroveAccelerometer16G(GroveConnectorI2C* connector)
+	{
+		_Device = connector->NewGroveI2CDevice(0x53);	// I2C_ADDRESS
+	}
 
 	void Init();
-	void ReadXYZ();
+	void Read();
 
 };

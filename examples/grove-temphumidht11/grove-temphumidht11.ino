@@ -10,8 +10,10 @@ GroveTempHumiDHT11 TempHumi(&Board.D38);
 
 void setup() {
   delay(200);
-  
   SerialUSB.begin(115200);
+
+  Board.D38.Enable();
+  TempHumi.Init();
 }
 
 void loop() {
