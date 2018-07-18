@@ -23,8 +23,8 @@ void setup() {
   Wio.PowerSupplyGrove(true);
   delay(500);
 
-  WireI2C.begin();    // TODO
-  Accel.Initialize(); // TODO
+  Board.I2C.Enable();
+  Accel.Init();
 }
 
 void loop() {

@@ -18,6 +18,11 @@ public:
 	{
 	}
 
+	void Enable()
+	{
+		_I2C.Enable();
+	}
+
 	GroveI2CDevice* NewGroveI2CDevice(uint8_t slaveAddress)
 	{
 		return new GroveI2CDevice(&_I2C, slaveAddress);

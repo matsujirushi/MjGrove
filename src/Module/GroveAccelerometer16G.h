@@ -19,7 +19,7 @@ public:
 public:
 	GroveAccelerometer16G(GroveConnectorI2C* connector);
 
-	void Initialize();
+	void Init();
 	void ReadXYZ();
 
 };

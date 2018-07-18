@@ -1,5 +1,10 @@
 #include "GroveI2C.h"
 
+void GroveI2C::Enable()
+{
+	_Wire->begin();
+}
+
 void GroveI2C::Write(uint8_t slaveAddress, const uint8_t* data, int dataSize)
 {
 	_Wire->beginTransmission(slaveAddress);

@@ -10,7 +10,7 @@ GroveAccelerometer16G::GroveAccelerometer16G(GroveConnectorI2C* connector)
 	_Device = connector->NewGroveI2CDevice(I2C_ADDRESS);
 }
 
-void GroveAccelerometer16G::Initialize()
+void GroveAccelerometer16G::Init()
 {
 	uint8_t writeData[2];
 	writeData[0] = REG_POWER_CTL;
