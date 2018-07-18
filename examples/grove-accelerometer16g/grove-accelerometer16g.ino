@@ -28,16 +28,13 @@ void setup() {
 }
 
 void loop() {
-  float x;
-  float y;
-  float z;
-  Accel.ReadXYZ(&x, &y, &z);  // TODO
+  Accel.ReadXYZ();
 
-  SerialUSB.print(x);
+  SerialUSB.print(Accel.X);
   SerialUSB.print(' ');
-  SerialUSB.print(y);
+  SerialUSB.print(Accel.Y);
   SerialUSB.print(' ');
-  SerialUSB.println(z);
+  SerialUSB.println(Accel.Z);
 
   delay(INTERVAL);
 }

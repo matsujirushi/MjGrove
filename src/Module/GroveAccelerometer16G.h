@@ -12,9 +12,14 @@ private:
 	GroveI2CDevice* _Device;
 
 public:
+	float X;
+	float Y;
+	float Z;
+
+public:
 	GroveAccelerometer16G(GroveConnectorI2C* connector);
 
 	void Initialize();
-	void ReadXYZ(float* x, float* y, float* z);
+	void ReadXYZ();
 
 };
