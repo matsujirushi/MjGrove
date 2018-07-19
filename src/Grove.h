@@ -1,11 +1,12 @@
 #pragma once
 
-#if defined ARDUINO_WIO_3G
+#if defined ARDUINO_STM32F4_WIO_GPS
+#include "Board/GroveBoardWioLTE.h"
+#elif defined ARDUINO_WIO_3G
+#include "Board/GroveBoardWio3G.h"
 #else
 #error "This board is not supported."
 #endif
-
-#include "Board/GroveBoardWio3G.h"
 
 #include "Module/GroveBuzzer.h"
 #include "Module/GroveButton.h"

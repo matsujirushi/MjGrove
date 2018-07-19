@@ -10,7 +10,9 @@ GroveTempHumiDHT11 TempHumi(&Board.D38);
 
 void setup() {
   delay(200);
+#if defined ARDUINO_WIO_3G
   SerialUSB.begin(115200);
+#endif
 
   Board.D38.Enable();
   TempHumi.Init();

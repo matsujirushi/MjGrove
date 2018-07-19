@@ -10,7 +10,7 @@ Groveƒ‚ƒWƒ…[ƒ‹‚ÌƒNƒ‰ƒX‚ÆAGrove‘Î‰ƒ{[ƒh‚ÌƒNƒ‰ƒX‚ª—pˆÓ‚³‚ê‚Ä‚¨‚èA‚±‚Ì2‚Â‚ÌƒNƒ
 ## ƒ[ƒhƒ}ƒbƒv
 
 2018/7 ... [Grove IoT ƒXƒ^[ƒ^[ƒLƒbƒg for SORACOM](https://soracom.jp/products/kit/grovestarter_kit_3g_soracom_edition/)‚Ì7íƒZƒ“ƒT[‚ğ’Ç‰Á  
-2018/7 ... Wio LTE JP Version‘Î‰  
+~~2018/7 ... Wio LTE JP Version‘Î‰~~ (7/19Ï)  
 2018/8 ... Grove - Rotary Angle Sensor‚ğ’Ç‰Á  
 2018/8 ... Wio LTE M1/NB1(UG96)‘Î‰  
 
@@ -18,9 +18,10 @@ Groveƒ‚ƒWƒ…[ƒ‹‚ÌƒNƒ‰ƒX‚ÆAGrove‘Î‰ƒ{[ƒh‚ÌƒNƒ‰ƒX‚ª—pˆÓ‚³‚ê‚Ä‚¨‚èA‚±‚Ì2‚Â‚ÌƒNƒ
 
 ### Groveƒ{[ƒhƒNƒ‰ƒX
 
-|Class|SKU|Name|
-|:--|:--|:--|
-|GroveBoard|-|[Wio 3G SORACOM Edition](https://soracom.jp/products/module/wio_3g_soracom_edition/)|
+|SKU|Name|
+|:--|:--|
+|-|[Wio 3G SORACOM Edition](https://soracom.jp/products/module/wio_3g_soracom_edition/)|
+|102991024|[Wio LTE JP Version](https://seeedjp.github.io/Wiki/Wio_LTE_for_Arduino/Home-ja.html)|
 
 ### Groveƒ‚ƒWƒ…[ƒ‹ƒNƒ‰ƒX
 

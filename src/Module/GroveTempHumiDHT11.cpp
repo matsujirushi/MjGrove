@@ -78,9 +78,17 @@ void GroveTempHumiDHT11::Read()
 	for (int i = 0; i < 5; i++) data[i] = DHT11ReadByte(_Pin);
 	DHT11Finish(_Pin);
 
-	if (!DHT11Check(data, sizeof(data))) throw "exception";
-	if (data[1] >= 10) throw "exception";
-	if (data[3] >= 10) throw "exception";
+	if (!DHT11Check(data, sizeof(data)) || data[1] >= 10 || data[3] >= 10)
+	{
+#if defined ARDUINO_STM32F4_WIO_GPS
+		return;
+
+#elif defined ARDUINO_WIO_3G
+		throw "exception";
+#else
+#error "This board is not supported."
+#endif
+	}
 
 	Humidity = (float)data[0] + (float)data[1] / 10.0f;
 	Temperature = (float)data[2] + (float)data[3] / 10.0f;

@@ -22,7 +22,14 @@ void GroveAccelerometer16G::Read()
 	uint8_t readData[6];
 	if (_Device->Read(readData, sizeof(readData)) != 6)
 	{
+#if defined ARDUINO_STM32F4_WIO_GPS
+		return;
+
+#elif defined ARDUINO_WIO_3G
 		throw "exception";
+#else
+#error "This board is not supported."
+#endif
 	}
 
 	int16_t val;
