@@ -12,3 +12,4 @@
 #include "Module/GroveButton.h"
 #include "Module/GroveAccelerometer16G.h"
 #include "Module/GroveTempHumiDHT11.h"
+#include "Module/GroveMagneticSwitch.h"

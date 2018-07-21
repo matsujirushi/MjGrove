@@ -4,28 +4,13 @@
 
 #pragma once
 
-#include "GroveModule.h"
-#include "../Connector/GroveConnectorDIO.h"
+#include "Abstract/GroveDigitalInOnOff.h"
 
-class GroveButton : public GroveModule
+class GroveButton : public GroveDigitalInOnOff
 {
-private:
-	GroveGpio* _Pin;
-
 public:
-	GroveButton(GroveConnectorDIO* connector)
+	GroveButton(GroveConnectorDIO* connector) : GroveDigitalInOnOff(connector)
 	{
-		_Pin = &connector->P1;
-	}
-
-	void Init()
-	{
-		_Pin->SetMode(GroveGpio::MODE_INPUT);
-	}
-
-	bool IsOn() const
-	{
-		return _Pin->Read();
 	}
 
 };
