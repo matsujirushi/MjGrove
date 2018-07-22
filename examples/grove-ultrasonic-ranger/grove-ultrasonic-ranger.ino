@@ -1,5 +1,5 @@
 // BOARD Seeed Wio 3G
-// GROVE I2C <-> Grove - 3-Axis Digital Accelerometer(±16g) (SKU#101020054)
+// GROVE I2C <-> Grove - Ultrasonic Ranger (SKU#101020010)
 
 #include <MjGrove.h>
 
