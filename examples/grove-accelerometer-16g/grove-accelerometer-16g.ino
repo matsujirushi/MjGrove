@@ -1,7 +1,7 @@
 // BOARD Seeed Wio 3G
 // GROVE I2C <-> Grove - 3-Axis Digital Accelerometer(±16g) (SKU#101020054)
 
-#include <Grove.h>
+#include <MjGrove.h>
 
 #define INTERVAL    (100)
 

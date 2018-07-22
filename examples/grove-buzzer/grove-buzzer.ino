@@ -1,7 +1,7 @@
 // BOARD Seeed Wio 3G
 // GROVE D38 <-> Grove - Buzzer (SKU#107020000)
 
-#include <Grove.h>
+#include <MjGrove.h>
 
 #define BUZZER_ON_TIME  (200)
 #define BUZZER_OFF_TIME (800)

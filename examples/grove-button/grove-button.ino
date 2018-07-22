@@ -1,7 +1,7 @@
 // BOARD Seeed Wio 3G
 // GROVE D38 <-> Grove - Button (SKU#101020003)
 
-#include <Grove.h>
+#include <MjGrove.h>
 
 #define INTERVAL    (100)
 
