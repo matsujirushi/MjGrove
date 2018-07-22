@@ -13,3 +13,4 @@
 #include "Module/GroveAccelerometer16G.h"
 #include "Module/GroveTempHumiDHT11.h"
 #include "Module/GroveMagneticSwitch.h"
+#include "Module/GroveUltrasonicRanger.h"
