@@ -1,22 +1,31 @@
 #include "GroveGPS.h"
 
-#if defined ARDUINO_STM32F4_WIO_GPS
-#include "Board/GroveBoardWioLTE.h"
-#elif defined ARDUINO_WIO_3G
-#include "Board/GroveBoardWio3G.h"
-#else
-#error "This board is not supported."
-#endif
-
 void GroveGPS::Init()
 {
 	_UART->SetMode(9600, 8, GroveUART::PARITY_NONE, 1);
+}
+
+void GroveGPS::AttachMessageReceived(void (*callback)(const char* message))
+{
+	_MessageReceivedCallback = callback;
 }
 
 void GroveGPS::DoWork()
 {
 	if (_UART->Available() >= 1)
 	{
-		SerialUSB.write(_UART->Read());
+		char c = _UART->Read();
+		switch (c)
+		{
+		case 13:
+			break;
+		case 10:
+			if (_MessageReceivedCallback != NULL) _MessageReceivedCallback(_Message.c_str());
+			_Message.clear();
+			break;
+		default:
+			_Message.push_back(c);
+			break;
+		}
 	}
 }
