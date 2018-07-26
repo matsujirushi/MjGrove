@@ -1,5 +1,5 @@
 // BOARD Seeed Wio 3G
-// GROVE I2C <-> Grove - Temperature & Humidity Sensor (DHT11) (SKU#101020011)
+// GROVE D38 <-> Grove - Temperature & Humidity Sensor (DHT11) (SKU#101020011)
 
 #include <MjGrove.h>
 

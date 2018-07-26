@@ -15,3 +15,4 @@
 #include "Module/GroveMagneticSwitch.h"
 #include "Module/GroveUltrasonicRanger.h"
 #include "Module/GroveGPS.h"
+#include "Module/GroveRotaryAngle.h"

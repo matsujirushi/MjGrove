@@ -30,6 +30,7 @@ Groveƒ‚ƒWƒ…[ƒ‹‚ÌƒNƒ‰ƒX‚ÆAGrove‘Î‰ƒ{[ƒh‚ÌƒNƒ‰ƒX‚ª—pˆÓ‚³‚ê‚Ä‚¨‚èA‚±‚Ì2‚Â‚ÌƒNƒ
 |GroveButton|101020003|[Grove - Button](http://wiki.seeedstudio.com/Grove-Button/)|
 |GroveUltrasonicRanger|101020010|[Grove - Ultrasonic Ranger](http://wiki.seeedstudio.com/Grove-Ultrasonic_Ranger/)|
 |GroveTempHumiDHT11|101020011|[Grove - Temperature & Humidity Sensor (DHT11)](http://wiki.seeedstudio.com/Grove-TemperatureAndHumidity_Sensor/)|
+|GroveRotaryAngle|101020017|[Grove - Rotary Angle Sensor](http://wiki.seeedstudio.com/Grove-Rotary_Angle_Sensor/)|
 |GroveMagneticSwitch|101020038|[Grove - Magnetic Switch](http://wiki.seeedstudio.com/Grove-Magnetic_Switch/)|
 |GroveAccelerometer16G|101020054|[Grove - 3-Axis Digital Accelerometer(}16g)](http://wiki.seeedstudio.com/Grove-3-Axis_Digital_Accelerometer-16g/)|
 |GroveBuzzer|107020000|[Grove - Buzzer](http://wiki.seeedstudio.com/Grove-Buzzer/)|

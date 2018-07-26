@@ -1,5 +1,5 @@
 // BOARD Seeed Wio 3G
-// GROVE I2C <-> Grove - Ultrasonic Ranger (SKU#101020010)
+// GROVE D38 <-> Grove - Ultrasonic Ranger (SKU#101020010)
 
 #include <MjGrove.h>
 

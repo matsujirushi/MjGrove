@@ -1,5 +1,5 @@
 // BOARD Seeed Wio 3G
-// GROVE I2C <-> Grove - GPS (SKU#113020003)
+// GROVE UART <-> Grove - GPS (SKU#113020003)
 
 #include <MjGrove.h>
 
