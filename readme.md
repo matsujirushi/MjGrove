@@ -11,7 +11,7 @@ Groveƒ‚ƒWƒ…[ƒ‹‚ÌƒNƒ‰ƒX‚ÆAGrove‘Î‰ƒ{[ƒh‚ÌƒNƒ‰ƒX‚ª—pˆÓ‚³‚ê‚Ä‚¨‚èA‚±‚Ì2‚Â‚ÌƒNƒ
 
 ~~2018/7 ... [Grove IoT ƒXƒ^[ƒ^[ƒLƒbƒg for SORACOM](https://soracom.jp/products/kit/grovestarter_kit_3g_soracom_edition/)‚Ì7íƒZƒ“ƒT[‚ğ’Ç‰Á~~(7/24Ï)  
 ~~2018/7 ... Wio LTE JP Version‘Î‰~~ (7/19Ï)  
-2018/8 ... Grove - Rotary Angle Sensor‚ğ’Ç‰Á  
+~~2018/8 ... Grove - Rotary Angle Sensor‚ğ’Ç‰Á~~ (7/27Ï)  
 2018/8 ... Wio LTE M1/NB1(UG96)‘Î‰  
 
 ## ‘Î‰‚µ‚Ä‚¢‚éGroveƒ{[ƒh‚ÆGroveƒ‚ƒWƒ…[ƒ‹
