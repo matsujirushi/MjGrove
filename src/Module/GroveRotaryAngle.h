@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "GroveModule.h"
+#include "Abstract/GroveModule.h"
 #include "../Connector/GroveConnectorAnalogIn.h"
 
 class GroveRotaryAngle : public GroveModule
@@ -19,6 +19,11 @@ public:
 	GroveRotaryAngle(GroveConnectorAnalogIn* connector)
 	{
 		_Pin = &connector->P1;
+	}
+
+	GroveRotaryAngle(GroveAnalogIn* pin)
+	{
+		_Pin = pin;
 	}
 
 	void Init();

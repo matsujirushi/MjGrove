@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "GroveModule.h"
+#include "Abstract/GroveModule.h"
 #include "../Connector/GroveConnectorDIO.h"
 
 class GroveUltrasonicRanger : public GroveModule
@@ -22,6 +22,11 @@ public:
 	GroveUltrasonicRanger(GroveConnectorDIO* connector)
 	{
 		_Pin = &connector->P1;
+	}
+
+	GroveUltrasonicRanger(GroveGpio* pin)
+	{
+		_Pin = pin;
 	}
 
 	void Init();

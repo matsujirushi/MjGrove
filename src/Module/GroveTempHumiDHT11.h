@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "GroveModule.h"
+#include "Abstract/GroveModule.h"
 #include "../Connector/GroveConnectorDIO.h"
 
 class GroveTempHumiDHT11 : public GroveModule
@@ -26,6 +26,11 @@ public:
 	GroveTempHumiDHT11(GroveConnectorDIO* connector)
 	{
 		_Pin = &connector->P1;
+	}
+
+	GroveTempHumiDHT11(GroveGpio* pin)
+	{
+		_Pin = pin;
 	}
 
 	void Init();

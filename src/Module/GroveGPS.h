@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "GroveModule.h"
+#include "Abstract/GroveModule.h"
 #include "../Connector/GroveConnectorUART.h"
 #include <string>
 

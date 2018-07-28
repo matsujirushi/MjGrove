@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "GroveModule.h"
+#include "Abstract/GroveModule.h"
 #include "../Connector/GroveConnectorDIO.h"
 
 class GroveBuzzer : public GroveModule
@@ -16,6 +16,11 @@ public:
 	GroveBuzzer(GroveConnectorDIO* connector)
 	{
 		_Pin = &connector->P1;
+	}
+
+	GroveBuzzer(GroveGpio* pin)
+	{
+		_Pin = pin;
 	}
 
 	void Init()

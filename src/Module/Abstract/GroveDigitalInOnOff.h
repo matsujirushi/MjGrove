@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../GroveModule.h"
+#include "GroveModule.h"
 #include "../../Connector/GroveConnectorDIO.h"
 
 class GroveDigitalInOnOff : public GroveModule
@@ -12,6 +12,11 @@ public:
 	GroveDigitalInOnOff(GroveConnectorDIO* connector)
 	{
 		_Pin = &connector->P1;
+	}
+
+	GroveDigitalInOnOff(GroveGpio* pin)
+	{
+		_Pin = pin;
 	}
 
 	void Init()

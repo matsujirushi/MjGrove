@@ -13,4 +13,8 @@ public:
 	{
 	}
 
+	GroveMagneticSwitch(GroveGpio* pin) : GroveDigitalInOnOff(pin)
+	{
+	}
+
 };

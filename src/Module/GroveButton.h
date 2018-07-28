@@ -13,4 +13,8 @@ public:
 	{
 	}
 
+	GroveButton(GroveGpio* pin) : GroveDigitalInOnOff(pin)
+	{
+	}
+
 };
