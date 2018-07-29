@@ -16,3 +16,4 @@
 #include "Module/GroveUltrasonicRanger.h"
 #include "Module/GroveGPS.h"
 #include "Module/GroveRotaryAngle.h"
+#include "Module/GroveOLEDDisplay096.h"
