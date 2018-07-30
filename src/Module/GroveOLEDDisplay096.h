@@ -6,14 +6,18 @@
 
 #include "Abstract/GroveModule.h"
 #include "../Connector/GroveConnectorI2C.h"
+#include <Arduino.h>
 
-class GroveOLEDDisplay096 : public GroveModule
+class GroveOLEDDisplay096 : public GroveModule, public Print
 {
 private:
 	GroveI2CDevice* _Device;
 
 	void SendCommand(uint8_t cmd);
 	void SendData(uint8_t data);
+
+	void SetHorizontalMode();
+	void SetPageMode();
 
 public:
 	GroveOLEDDisplay096(GroveConnectorI2C* connector)
@@ -24,6 +28,8 @@ public:
 	void Init();
 	void Clear();
 	void SetTextPosition(int row, int column);
-	void write(char c);
+	void PrintBitmap(const uint8_t* bitmap, int bitmapSize);
+
+	virtual size_t write(uint8_t val);
 
 };

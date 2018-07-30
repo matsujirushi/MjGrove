@@ -122,6 +122,18 @@ void GroveOLEDDisplay096::SendData(uint8_t data)
 	_Device->Write(writeData, sizeof(writeData));
 }
 
+void GroveOLEDDisplay096::SetHorizontalMode()
+{
+	SendCommand(0x20);	// Horizontal Addressing Mode
+	SendCommand(0x00);	// Set Lower Column Start Address for Page Addressing Mode
+}
+
+void GroveOLEDDisplay096::SetPageMode()
+{
+	SendCommand(0x20);	// Horizontal Addressing Mode
+	SendCommand(0x02);	// Set Lower Column Start Address for Page Addressing Mode
+}
+
 void GroveOLEDDisplay096::Init()
 {
 	SendCommand(DISPLAY_OFF_CMD);
@@ -129,10 +141,7 @@ void GroveOLEDDisplay096::Init()
 	SendCommand(DISPLAY_ON_CMD);
 	delay(5);
 	SendCommand(NORMAL_DISPLAY_CMD);
-	delay(5);
-	SendCommand(0x20);	// Horizontal Addressing Mode
-	delay(5);
-	SendCommand(0x02);	// Set Lower Column Start Address for Page Addressing Mode
+	SetPageMode();
 }
 
 void GroveOLEDDisplay096::Clear()
@@ -159,12 +168,26 @@ void GroveOLEDDisplay096::SetTextPosition(int row, int column)
 	SendCommand(0x10 + ((8 * column >> 4) & 0x0f));	// Set Higher Column Start Address for Page Addressing Mode
 }
 
-void GroveOLEDDisplay096::write(char c)
+void GroveOLEDDisplay096::PrintBitmap(const uint8_t* bitmap, int bitmapSize)
 {
-	if (c < 0x20 || 0x7f < c) c = ' ';
+	SetHorizontalMode();
+
+	for (int i = 0; i < bitmapSize; i++)
+	{
+		SendData(bitmap[i]);
+	}
+
+	SetPageMode();
+}
+
+size_t GroveOLEDDisplay096::write(uint8_t val)
+{
+	if (val < 0x20 || 0x7f < val) val = ' ';
 
 	for (int i = 0; i < 8; i++)
 	{
-		SendData(BasicFont[c - 0x20][i]);
+		SendData(BasicFont[val - 0x20][i]);
 	}
+
+	return 1;
 }
