@@ -17,3 +17,4 @@
 #include "Module/GroveGPS.h"
 #include "Module/GroveRotaryAngle.h"
 #include "Module/GroveOLEDDisplay096.h"
+#include "Module/GroveTempHumiSHT31.h"

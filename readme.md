@@ -25,6 +25,7 @@ Groveƒ‚ƒWƒ…[ƒ‹‚ÌƒNƒ‰ƒX‚ÆAGrove‘Î‰ƒ{[ƒh‚ÌƒNƒ‰ƒX‚ª—pˆÓ‚³‚ê‚Ä‚¨‚èA‚±‚Ì2‚Â‚ÌƒNƒ
 |GroveRotaryAngle|101020017|[Grove - Rotary Angle Sensor](http://wiki.seeedstudio.com/Grove-Rotary_Angle_Sensor/)|grove-rotary-angle||
 |GroveMagneticSwitch|101020038|[Grove - Magnetic Switch](http://wiki.seeedstudio.com/Grove-Magnetic_Switch/)|grove-magnetic-switch||
 |GroveAccelerometer16G|101020054|[Grove - 3-Axis Digital Accelerometer(}16g)](http://wiki.seeedstudio.com/Grove-3-Axis_Digital_Accelerometer-16g/)|grove-accelerometer-16g||
+|GroveTempHumiSHT31|101020212|[Grove - Temperature&Humidity Sensor (SHT31)](http://wiki.seeedstudio.com/Grove-TempAndHumi_Sensor-SHT31/)|grove-temp-humi-sht31||
 |GroveOLEDDisplay096|104030008|[Grove - OLED Display 0.96"](http://wiki.seeedstudio.com/Grove-OLED_Display_0.96inch/)|grove-oled-display-096||
 |GroveBuzzer|107020000|[Grove - Buzzer](http://wiki.seeedstudio.com/Grove-Buzzer/)|grove-buzzer||
 |GroveGPS|113020003|[Grove - GPS](http://wiki.seeedstudio.com/Grove-GPS/)|grove-gps||
