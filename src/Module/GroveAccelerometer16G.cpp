@@ -25,7 +25,7 @@ void GroveAccelerometer16G::Read()
 #if defined ARDUINO_STM32F4_WIO_GPS
 		return;
 
-#elif defined ARDUINO_WIO_3G
+#elif defined ARDUINO_WIO_3G || defined ARDUINO_WIO_LTE_M1NB1_BG96
 		throw "exception";
 #else
 #error "This board is not supported."

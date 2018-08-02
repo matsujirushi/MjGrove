@@ -4,6 +4,8 @@
 #include "Board/GroveBoardWioLTE.h"
 #elif defined ARDUINO_WIO_3G
 #include "Board/GroveBoardWio3G.h"
+#elif defined ARDUINO_WIO_LTE_M1NB1_BG96
+#include "Board/GroveBoardWioLTEM1NB1BG96.h"
 #else
 #error "This board is not supported."
 #endif
