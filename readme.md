@@ -13,7 +13,7 @@ Groveƒ‚ƒWƒ…[ƒ‹‚ÌƒNƒ‰ƒX‚ÆAGrove‘Î‰ƒ{[ƒh‚ÌƒNƒ‰ƒX‚ª—pˆÓ‚³‚ê‚Ä‚¨‚èA‚±‚Ì2‚Â‚ÌƒNƒ
 |:--|:--|:--|
 |-|[Wio 3G SORACOM Edition](https://soracom.jp/products/module/wio_3g_soracom_edition/)||
 |102991024|[Wio LTE JP Version](https://seeedjp.github.io/Wiki/Wio_LTE_for_Arduino/Home-ja.html)||
-|-|~~Wio LTE M1/NB1(UG96)~~|»•i”­”„ŒãA‘Î‰—\’è|
+|-|Wio LTE M1/NB1(UG96)|2018”N9Œ”­”„—\’è|
 
 ### Groveƒ‚ƒWƒ…[ƒ‹
 

@@ -23,4 +23,10 @@ public:
 		return _I2C->Read(_SlaveAddress, data, dataSize);
 	}
 
+	void WriteRegByte(uint8_t reg, uint8_t data);
+	void WriteRegBytes(uint8_t reg, const uint8_t* data, int dataSize);
+
+	int ReadRegByte(uint8_t reg, uint8_t* data);
+	int ReadRegBytes(uint8_t reg, uint8_t* data, int dataSize);
+
 };
