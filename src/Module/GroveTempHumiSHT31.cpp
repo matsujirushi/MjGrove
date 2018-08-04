@@ -1,7 +1,9 @@
 #include "GroveTempHumiSHT31.h"
 
-#define CMD_SOFT_RESET		0x30a2
-#define CMD_SINGLE_HIGH		0x2400
+#define POLYNOMIAL			(0x31)
+
+#define CMD_SOFT_RESET		(0x30a2)
+#define CMD_SINGLE_HIGH		(0x2400)
 
 void GroveTempHumiSHT31::SendCommand(uint16_t cmd)
 {
@@ -9,6 +11,23 @@ void GroveTempHumiSHT31::SendCommand(uint16_t cmd)
 	writeData[0] = cmd >> 8;
 	writeData[1] = cmd & 0xff;
 	_Device->Write(writeData, sizeof(writeData));
+}
+
+uint8_t GroveTempHumiSHT31::CalcCRC8(const uint8_t* data, int dataSize)
+{
+	uint8_t crc = 0xff;
+
+	for (int j = dataSize; j > 0; j--)
+	{
+		crc ^= *data++;
+
+		for (int i = 8; i > 0; i--)
+		{
+			crc = crc & 0x80 ? crc << 1 ^ POLYNOMIAL : crc << 1;
+		}
+	}
+
+	return crc;
 }
 
 void GroveTempHumiSHT31::Init()
@@ -35,17 +54,39 @@ void GroveTempHumiSHT31::Read()
 #endif
 	}
 
+	if (readData[2] != CalcCRC8(&readData[0], 2))
+	{
+#if defined ARDUINO_STM32F4_WIO_GPS
+		return;
+
+#elif defined ARDUINO_WIO_3G || defined ARDUINO_WIO_LTE_M1NB1_BG96
+		throw "exception";
+#else
+#error "This board is not supported."
+#endif
+	}
+
+	if (readData[5] != CalcCRC8(&readData[3], 2))
+	{
+#if defined ARDUINO_STM32F4_WIO_GPS
+		return;
+
+#elif defined ARDUINO_WIO_3G || defined ARDUINO_WIO_LTE_M1NB1_BG96
+		throw "exception";
+#else
+#error "This board is not supported."
+#endif
+	}
+
 	uint16_t ST;
 	ST = readData[0];
 	ST <<= 8;
 	ST |= readData[1];
-	// TODO crc check
 
 	uint16_t SRH;
 	SRH = readData[3];
 	SRH <<= 8;
 	SRH |= readData[4];
-	// TODO crc check
 
 	Temperature = (float)ST * 175 / 0xffff - 45;
 	Humidity = (float)SRH * 100 / 0xffff;

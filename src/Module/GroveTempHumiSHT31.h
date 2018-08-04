@@ -13,6 +13,7 @@ private:
 	GroveI2CDevice * _Device;
 
 	void SendCommand(uint16_t cmd);
+	static uint8_t CalcCRC8(const uint8_t* data, int dataSize);
 
 public:
 	float Temperature;
