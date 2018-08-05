@@ -7,20 +7,13 @@
 
 void GroveAccelerometer16G::Init()
 {
-	uint8_t writeData[2];
-	writeData[0] = REG_POWER_CTL;
-	writeData[1] = 0x08;
-	_Device->Write(writeData, sizeof(writeData));
+	_Device->WriteRegByte(REG_POWER_CTL, 0x08);
 }
 
 void GroveAccelerometer16G::Read()
 {
-	uint8_t writeData[1];
-	writeData[0] = REG_DATAX0;
-	_Device->Write(writeData, sizeof(writeData));
-
 	uint8_t readData[6];
-	if (_Device->Read(readData, sizeof(readData)) != 6)
+	if (_Device->ReadRegBytes(REG_DATAX0, readData, sizeof(readData)) != 6)
 	{
 #if defined ARDUINO_STM32F4_WIO_GPS
 		return;
