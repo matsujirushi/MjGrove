@@ -1,4 +1,5 @@
 #include "GroveTempHumiDHT11.h"
+#include "Abstract/GroveModuleError.h"
 #include <Arduino.h>
 
 void GroveTempHumiDHT11::DHT11Init(GroveGpio* gpio)
@@ -78,17 +79,7 @@ void GroveTempHumiDHT11::Read()
 	for (int i = 0; i < 5; i++) data[i] = DHT11ReadByte(_Pin);
 	DHT11Finish(_Pin);
 
-	if (!DHT11Check(data, sizeof(data)) || data[1] >= 10 || data[3] >= 10)
-	{
-#if defined ARDUINO_STM32F4_WIO_GPS
-		return;
-
-#elif defined ARDUINO_WIO_3G || defined ARDUINO_WIO_LTE_M1NB1_BG96
-		throw "exception";
-#else
-#error "This board is not supported."
-#endif
-	}
+	if (!DHT11Check(data, sizeof(data)) || data[1] >= 10 || data[3] >= 10) GROVE_MODULE_ERROR("exception");
 
 	Humidity = (float)data[0] + (float)data[1] / 10.0f;
 	Temperature = (float)data[2] + (float)data[3] / 10.0f;

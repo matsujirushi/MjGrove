@@ -1,4 +1,5 @@
 #include "GroveTempHumiSHT31.h"
+#include "Abstract/GroveModuleError.h"
 
 #define POLYNOMIAL			(0x31)
 
@@ -42,41 +43,10 @@ void GroveTempHumiSHT31::Read()
 	delay(15);
 
 	uint8_t readData[6];
-	if (_Device->Read(readData, sizeof(readData)) != 6)
-	{
-#if defined ARDUINO_STM32F4_WIO_GPS
-		return;
+	if (_Device->Read(readData, sizeof(readData)) != 6) GROVE_MODULE_ERROR("exception");
 
-#elif defined ARDUINO_WIO_3G || defined ARDUINO_WIO_LTE_M1NB1_BG96
-		throw "exception";
-#else
-#error "This board is not supported."
-#endif
-	}
-
-	if (readData[2] != CalcCRC8(&readData[0], 2))
-	{
-#if defined ARDUINO_STM32F4_WIO_GPS
-		return;
-
-#elif defined ARDUINO_WIO_3G || defined ARDUINO_WIO_LTE_M1NB1_BG96
-		throw "exception";
-#else
-#error "This board is not supported."
-#endif
-	}
-
-	if (readData[5] != CalcCRC8(&readData[3], 2))
-	{
-#if defined ARDUINO_STM32F4_WIO_GPS
-		return;
-
-#elif defined ARDUINO_WIO_3G || defined ARDUINO_WIO_LTE_M1NB1_BG96
-		throw "exception";
-#else
-#error "This board is not supported."
-#endif
-	}
+	if (readData[2] != CalcCRC8(&readData[0], 2)) GROVE_MODULE_ERROR("exception");
+	if (readData[5] != CalcCRC8(&readData[3], 2)) GROVE_MODULE_ERROR("exception");
 
 	uint16_t ST;
 	ST = readData[0];

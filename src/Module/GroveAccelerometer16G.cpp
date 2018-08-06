@@ -1,4 +1,5 @@
 #include "GroveAccelerometer16G.h"
+#include "Abstract/GroveModuleError.h"
 #include <math.h>
 
 #define I2C_ADDRESS   (0x53)
@@ -13,17 +14,7 @@ void GroveAccelerometer16G::Init()
 void GroveAccelerometer16G::Read()
 {
 	uint8_t readData[6];
-	if (_Device->ReadRegBytes(REG_DATAX0, readData, sizeof(readData)) != 6)
-	{
-#if defined ARDUINO_STM32F4_WIO_GPS
-		return;
-
-#elif defined ARDUINO_WIO_3G || defined ARDUINO_WIO_LTE_M1NB1_BG96
-		throw "exception";
-#else
-#error "This board is not supported."
-#endif
-	}
+	if (_Device->ReadRegBytes(REG_DATAX0, readData, sizeof(readData)) != 6) GROVE_MODULE_ERROR("exception");
 
 	int16_t val;
 
