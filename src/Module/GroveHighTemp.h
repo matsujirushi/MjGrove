@@ -14,6 +14,7 @@ private:
 	GroveAnalogIn* _Pin2;
 
 	float ReadReferenceJunctionTemperature() const;
+	float ReadThermocoupleTemperature() const;
 
 public:
 	float Temperature;
