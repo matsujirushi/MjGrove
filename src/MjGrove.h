@@ -22,3 +22,4 @@
 #include "Module/GroveTempHumiSHT31.h"
 #include "Module/GroveHighTemp.h"
 #include "Module/GroveTempOneWire.h"
+#include "Module/GroveLEDBar2.h"
