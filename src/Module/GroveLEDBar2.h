@@ -12,8 +12,8 @@ class GroveLEDBar2 : public GroveModule
 private:
 	GroveGpio* _PinDI;
 	GroveGpio* _PinDCKI;
+	float _BrightnessList[10];
 
-public:
 	void SendData(uint16_t data);
 	void LatchData();
 
@@ -25,5 +25,8 @@ public:
 	}
 
 	void Init();
+	void Clear();
+	void SetBrightness(int index, float brightness);
+	void Show();
 
 };
