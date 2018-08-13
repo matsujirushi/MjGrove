@@ -11,7 +11,7 @@
 class GroveOLEDDisplay096 : public GroveModule, public Print
 {
 private:
-	GroveI2CDevice* _Device;
+	HalI2CDevice* _Device;
 
 	void SendCommand(uint8_t cmd);
 	void SendData(uint8_t data);
@@ -22,7 +22,7 @@ private:
 public:
 	GroveOLEDDisplay096(GroveConnectorI2C* connector)
 	{
-		_Device = connector->NewGroveI2CDevice(0x3c);	// I2C_ADDRESS
+		_Device = connector->NewDevice(0x3c);	// I2C_ADDRESS
 	}
 
 	void Init();

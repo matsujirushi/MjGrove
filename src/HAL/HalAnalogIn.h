@@ -2,7 +2,7 @@
 
 #include <Arduino.h>
 
-class GroveAnalogIn
+class HalAnalogIn
 {
 private:
 	uint8_t _Pin;
@@ -11,7 +11,7 @@ public:
 	const int MAX_VALUE = 4095;
 
 public:
-	GroveAnalogIn(int pin)
+	HalAnalogIn(int pin)
 	{
 		_Pin = pin;
 	}

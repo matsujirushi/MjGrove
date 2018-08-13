@@ -2,7 +2,7 @@
 
 #include <Arduino.h>
 
-class GroveUART
+class HalUART
 {
 private:
 	HardwareSerial* _Serial;
@@ -16,7 +16,7 @@ public:
 	};
 
 public:
-	GroveUART(HardwareSerial* serial) : _Serial(serial)
+	HalUART(HardwareSerial* serial) : _Serial(serial)
 	{
 	}
 

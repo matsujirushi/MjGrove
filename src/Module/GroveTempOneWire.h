@@ -10,7 +10,7 @@
 class GroveTempOneWire : public GroveModule
 {
 private:
-	GroveGpio * _Pin;
+	HalGpio* _Pin;
 
 	void PinWrite(int value);
 	int PinRead() const;
@@ -33,7 +33,7 @@ public:
 		_Pin = &connector->P1;
 	}
 
-	GroveTempOneWire(GroveGpio* pin)
+	GroveTempOneWire(HalGpio* pin)
 	{
 		_Pin = pin;
 	}

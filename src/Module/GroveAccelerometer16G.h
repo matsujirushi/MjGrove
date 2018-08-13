@@ -10,7 +10,7 @@
 class GroveAccelerometer16G : public GroveModule
 {
 private:
-	GroveI2CDevice* _Device;
+	HalI2CDevice* _Device;
 
 public:
 	float X;
@@ -20,7 +20,7 @@ public:
 public:
 	GroveAccelerometer16G(GroveConnectorI2C* connector)
 	{
-		_Device = connector->NewGroveI2CDevice(0x53);	// I2C_ADDRESS
+		_Device = connector->NewDevice(0x53);	// I2C_ADDRESS
 	}
 
 	void Init();

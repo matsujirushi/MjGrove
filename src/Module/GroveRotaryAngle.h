@@ -10,7 +10,7 @@
 class GroveRotaryAngle : public GroveModule
 {
 private:
-	GroveAnalogIn * _Pin;
+	HalAnalogIn* _Pin;
 
 public:
 	float Volume;
@@ -21,7 +21,7 @@ public:
 		_Pin = &connector->P1;
 	}
 
-	GroveRotaryAngle(GroveAnalogIn* pin)
+	GroveRotaryAngle(HalAnalogIn* pin)
 	{
 		_Pin = pin;
 	}

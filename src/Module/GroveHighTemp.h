@@ -10,8 +10,8 @@
 class GroveHighTemp : public GroveModule
 {
 private:
-	GroveAnalogIn* _Pin1;
-	GroveAnalogIn* _Pin2;
+	HalAnalogIn* _Pin1;
+	HalAnalogIn* _Pin2;
 
 	float ReadReferenceJunctionTemperature() const;
 	float ReadThermocoupleTemperature() const;

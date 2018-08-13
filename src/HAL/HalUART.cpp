@@ -1,10 +1,10 @@
-#include "GroveUART.h"
+#include "HalUART.h"
 
-void GroveUART::Enable()
+void HalUART::Enable()
 {
 }
 
-void GroveUART::SetMode(int baudRate, int dataBit, GroveUART::ParityType parity, int stopBit)
+void HalUART::SetMode(int baudRate, int dataBit, HalUART::ParityType parity, int stopBit)
 {
 	if (dataBit == 8 && parity == PARITY_NONE && stopBit == 1)
 	{

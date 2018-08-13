@@ -2,7 +2,7 @@
 
 void GroveGPS::Init()
 {
-	_UART->SetMode(9600, 8, GroveUART::PARITY_NONE, 1);
+	_UART->SetMode(9600, 8, HalUART::PARITY_NONE, 1);
 }
 
 void GroveGPS::AttachMessageReceived(void (*callback)(const char* message))

@@ -11,7 +11,7 @@
 class GroveGPS : public GroveModule
 {
 private:
-	GroveUART* _UART;
+	HalUART* _UART;
 	void (*_MessageReceivedCallback)(const char* message);
 	std::string _Message;
 

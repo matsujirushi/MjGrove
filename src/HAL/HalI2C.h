@@ -2,13 +2,13 @@
 
 #include <Wire.h>
 
-class GroveI2C
+class HalI2C
 {
 private:
 	TwoWire* _Wire;
 
 public:
-	GroveI2C(TwoWire* wire) : _Wire(wire)
+	HalI2C(TwoWire* wire) : _Wire(wire)
 	{
 	}
 

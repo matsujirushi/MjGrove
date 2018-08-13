@@ -10,7 +10,7 @@
 class GroveBuzzer : public GroveModule
 {
 private:
-	GroveGpio* _Pin;
+	HalGpio* _Pin;
 
 public:
 	GroveBuzzer(GroveConnectorDIO* connector)
@@ -18,14 +18,14 @@ public:
 		_Pin = &connector->P1;
 	}
 
-	GroveBuzzer(GroveGpio* pin)
+	GroveBuzzer(HalGpio* pin)
 	{
 		_Pin = pin;
 	}
 
 	void Init()
 	{
-		_Pin->SetMode(GroveGpio::MODE_OUTPUT);
+		_Pin->SetMode(HalGpio::MODE_OUTPUT);
 		_Pin->Write(false);
 	}
 

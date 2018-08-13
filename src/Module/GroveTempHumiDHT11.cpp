@@ -2,20 +2,20 @@
 #include "Abstract/GroveModuleError.h"
 #include <Arduino.h>
 
-void GroveTempHumiDHT11::DHT11Init(GroveGpio* gpio)
+void GroveTempHumiDHT11::DHT11Init(HalGpio* gpio)
 {
-	gpio->SetMode(GroveGpio::MODE_OUTPUT);
+	gpio->SetMode(HalGpio::MODE_OUTPUT);
 	gpio->Write(true);
 }
 
-void GroveTempHumiDHT11::DHT11Start(GroveGpio* gpio)
+void GroveTempHumiDHT11::DHT11Start(HalGpio* gpio)
 {
 	// Host the start of signal
 	gpio->Write(false);
 	delay(18);
 
 	// Pulled up to wait for
-	gpio->SetMode(GroveGpio::MODE_INPUT);
+	gpio->SetMode(HalGpio::MODE_INPUT);
 	while (!gpio->Read());
 
 	// Response signal
@@ -25,7 +25,7 @@ void GroveTempHumiDHT11::DHT11Start(GroveGpio* gpio)
 	while (!gpio->Read());
 }
 
-uint8_t GroveTempHumiDHT11::DHT11ReadByte(GroveGpio* gpio)
+uint8_t GroveTempHumiDHT11::DHT11ReadByte(HalGpio* gpio)
 {
 	uint8_t data = 0;
 
@@ -45,12 +45,12 @@ uint8_t GroveTempHumiDHT11::DHT11ReadByte(GroveGpio* gpio)
 	return data;
 }
 
-void GroveTempHumiDHT11::DHT11Finish(GroveGpio* gpio)
+void GroveTempHumiDHT11::DHT11Finish(HalGpio* gpio)
 {
 	// Releases the bus
 	while (!gpio->Read());
 	gpio->Write(true);
-	gpio->SetMode(GroveGpio::MODE_OUTPUT);
+	gpio->SetMode(HalGpio::MODE_OUTPUT);
 }
 
 bool GroveTempHumiDHT11::DHT11Check(const uint8_t* data, int dataSize)

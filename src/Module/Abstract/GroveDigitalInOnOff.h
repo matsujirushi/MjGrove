@@ -6,7 +6,7 @@
 class GroveDigitalInOnOff : public GroveModule
 {
 private:
-	GroveGpio* _Pin;
+	HalGpio* _Pin;
 
 public:
 	GroveDigitalInOnOff(GroveConnectorDIO* connector)
@@ -14,14 +14,14 @@ public:
 		_Pin = &connector->P1;
 	}
 
-	GroveDigitalInOnOff(GroveGpio* pin)
+	GroveDigitalInOnOff(HalGpio* pin)
 	{
 		_Pin = pin;
 	}
 
 	void Init()
 	{
-		_Pin->SetMode(GroveGpio::MODE_INPUT);
+		_Pin->SetMode(HalGpio::MODE_INPUT);
 	}
 
 	bool IsOn() const

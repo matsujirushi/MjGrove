@@ -10,7 +10,7 @@
 class GroveUltrasonicRanger : public GroveModule
 {
 private:
-	GroveGpio* _Pin;
+	HalGpio* _Pin;
 
 	unsigned long MicrosDiff(unsigned long begin, unsigned long end);
 	unsigned long PulseIn(bool state, unsigned long timeout = 1000000);
@@ -24,7 +24,7 @@ public:
 		_Pin = &connector->P1;
 	}
 
-	GroveUltrasonicRanger(GroveGpio* pin)
+	GroveUltrasonicRanger(HalGpio* pin)
 	{
 		_Pin = pin;
 	}

@@ -10,8 +10,8 @@
 class GroveLEDBar2 : public GroveModule
 {
 private:
-	GroveGpio* _PinDI;
-	GroveGpio* _PinDCKI;
+	HalGpio* _PinDI;
+	HalGpio* _PinDCKI;
 	float _BrightnessList[10];
 
 	void SendData(uint16_t data);

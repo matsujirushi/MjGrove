@@ -13,7 +13,7 @@ public:
 	{
 	}
 
-	GroveMagneticSwitch(GroveGpio* pin) : GroveDigitalInOnOff(pin)
+	GroveMagneticSwitch(HalGpio* pin) : GroveDigitalInOnOff(pin)
 	{
 	}
 

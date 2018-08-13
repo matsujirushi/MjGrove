@@ -34,9 +34,9 @@ void GroveLEDBar2::LatchData()
 
 void GroveLEDBar2::Init()
 {
-	_PinDI->SetMode(GroveGpio::MODE_OUTPUT);
+	_PinDI->SetMode(HalGpio::MODE_OUTPUT);
 	_PinDI->Write(false);
-	_PinDCKI->SetMode(GroveGpio::MODE_OUTPUT);
+	_PinDCKI->SetMode(HalGpio::MODE_OUTPUT);
 	_PinDCKI->Write(false);
 
 	Clear();

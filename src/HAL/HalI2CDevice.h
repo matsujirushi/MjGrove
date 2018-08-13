@@ -1,15 +1,15 @@
 #pragma once
 
-#include "GroveI2C.h"
+#include "HalI2C.h"
 
-class GroveI2CDevice
+class HalI2CDevice
 {
 private:
-	GroveI2C* _I2C;
+	HalI2C* _I2C;
 	uint8_t _SlaveAddress;
 
 public:
-	GroveI2CDevice(GroveI2C* i2c, uint8_t slaveAddress) : _I2C(i2c), _SlaveAddress(slaveAddress)
+	HalI2CDevice(HalI2C* i2c, uint8_t slaveAddress) : _I2C(i2c), _SlaveAddress(slaveAddress)
 	{
 	}
 

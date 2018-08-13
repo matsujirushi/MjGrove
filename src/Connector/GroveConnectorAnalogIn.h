@@ -1,13 +1,13 @@
 #pragma once
 
 #include "GroveConnector.h"
-#include "../Interface/GroveAnalogIn.h"
+#include "../HAL/HalAnalogIn.h"
 
 class GroveConnectorAnalogIn : public GroveConnector
 {
 public:
-	GroveAnalogIn P1;
-	GroveAnalogIn P2;
+	HalAnalogIn P1;
+	HalAnalogIn P2;
 
 public:
 	GroveConnectorAnalogIn(int pin1, int pin2) : P1(pin1), P2(pin2)

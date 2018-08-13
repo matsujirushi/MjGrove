@@ -10,7 +10,7 @@
 class GroveTempHumiSHT31 : public GroveModule
 {
 private:
-	GroveI2CDevice * _Device;
+	HalI2CDevice* _Device;
 
 	void SendCommand(uint16_t cmd);
 	static uint8_t CalcCRC8(const uint8_t* data, int dataSize);
@@ -22,7 +22,7 @@ public:
 public:
 	GroveTempHumiSHT31(GroveConnectorI2C* connector)
 	{
-		_Device = connector->NewGroveI2CDevice(0x44);	// I2C_ADDRESS
+		_Device = connector->NewDevice(0x44);	// I2C_ADDRESS
 	}
 
 	void Init();

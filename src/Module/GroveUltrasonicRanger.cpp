@@ -26,17 +26,17 @@ unsigned long GroveUltrasonicRanger::PulseIn(bool state, unsigned long timeout)
 
 void GroveUltrasonicRanger::Init()
 {
-	_Pin->SetMode(GroveGpio::MODE_INPUT);
+	_Pin->SetMode(HalGpio::MODE_INPUT);
 }
 
 void GroveUltrasonicRanger::Read()
 {
-	_Pin->SetMode(GroveGpio::MODE_OUTPUT);
+	_Pin->SetMode(HalGpio::MODE_OUTPUT);
 	_Pin->Write(true);
 	delayMicroseconds(10);
 
 	_Pin->Write(false);
-	_Pin->SetMode(GroveGpio::MODE_INPUT);
+	_Pin->SetMode(HalGpio::MODE_INPUT);
 
 	auto duration = PulseIn(true);
 	if (duration == 0)
