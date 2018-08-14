@@ -1,5 +1,6 @@
 #include "GroveTempHumiSHT31.h"
 #include "Abstract/GroveModuleError.h"
+#include "../HAL/HalSystem.h"
 
 #define POLYNOMIAL			(0x31)
 
@@ -34,13 +35,13 @@ uint8_t GroveTempHumiSHT31::CalcCRC8(const uint8_t* data, int dataSize)
 void GroveTempHumiSHT31::Init()
 {
 	SendCommand(CMD_SOFT_RESET);
-	delay(1);
+	HalSystem::DelayMs(1);
 }
 
 void GroveTempHumiSHT31::Read()
 {
 	SendCommand(CMD_SINGLE_HIGH);
-	delay(15);
+	HalSystem::DelayMs(15);
 
 	uint8_t readData[6];
 	if (_Device->Read(readData, sizeof(readData)) != 6) GROVE_MODULE_ERROR("exception");

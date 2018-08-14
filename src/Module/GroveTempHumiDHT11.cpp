@@ -1,6 +1,6 @@
 #include "GroveTempHumiDHT11.h"
 #include "Abstract/GroveModuleError.h"
-#include <Arduino.h>
+#include "../HAL/HalSystem.h"
 
 void GroveTempHumiDHT11::DHT11Init(HalGpio* gpio)
 {
@@ -12,7 +12,7 @@ void GroveTempHumiDHT11::DHT11Start(HalGpio* gpio)
 {
 	// Host the start of signal
 	gpio->Write(false);
-	delay(18);
+	HalSystem::DelayMs(18);
 
 	// Pulled up to wait for
 	gpio->SetMode(HalGpio::MODE_INPUT);

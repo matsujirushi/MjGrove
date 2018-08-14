@@ -1,5 +1,6 @@
 #include "GroveTempOneWire.h"
 #include "Abstract/GroveModuleError.h"
+#include "../HAL/HalSystem.h"
 
 void GroveTempOneWire::PinWrite(int value)
 {
@@ -25,23 +26,23 @@ bool GroveTempOneWire::WriteByte(uint8_t data)
 	{
 		// Start of slot.
 		PinWrite(0);
-		delayMicroseconds(1);
+		HalSystem::DelayUs(1);
 
 		if (data & 1 << i)
 		{
 			// Write 1.
 			PinWrite(1);
-			delayMicroseconds(59);
+			HalSystem::DelayUs(59);
 		}
 		else
 		{
 			// Write 0.
-			delayMicroseconds(59);
+			HalSystem::DelayUs(59);
 		}
 
 		// End of slot.
 		PinWrite(1);
-		delayMicroseconds(1);
+		HalSystem::DelayUs(1);
 
 		// Check bus.
 		if (!PinRead()) return false;
@@ -58,17 +59,17 @@ bool GroveTempOneWire::ReadByte(uint8_t* data)
 	{
 		// Start of slot.
 		PinWrite(0);
-		delayMicroseconds(1);
+		HalSystem::DelayUs(1);
 
 		// free bus.
 		PinWrite(1);
-		delayMicroseconds(9);
+		HalSystem::DelayUs(9);
 
 		// Read.
 		*data |= PinRead() << i;
 
 		// End of slot.
-		delayMicroseconds(50);
+		HalSystem::DelayUs(50);
 
 		// Check bus.
 		if (!PinRead()) return false;
@@ -80,9 +81,9 @@ bool GroveTempOneWire::ReadByte(uint8_t* data)
 bool GroveTempOneWire::OneWireReset()
 {
 	PinWrite(0);
-	delayMicroseconds(480);
+	HalSystem::DelayUs(480);
 	PinWrite(1);
-	delayMicroseconds(480);
+	HalSystem::DelayUs(480);
 
 	// Check bus.
 	if (!PinRead()) return false;
@@ -129,17 +130,17 @@ bool GroveTempOneWire::OneWireConvertT()
 	{
 		// Start of slot.
 		PinWrite(0);
-		delayMicroseconds(1);
+		HalSystem::DelayUs(1);
 
 		// free bus.
 		PinWrite(1);
-		delayMicroseconds(9);
+		HalSystem::DelayUs(9);
 
 		// Read.
 		done = PinRead();
 
 		// End of slot.
-		delayMicroseconds(50);
+		HalSystem::DelayUs(50);
 
 		// Check bus.
 		if (!PinRead()) return false;

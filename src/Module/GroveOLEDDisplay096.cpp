@@ -1,4 +1,5 @@
 #include "GroveOLEDDisplay096.h"
+#include "../HAL/HalSystem.h"
 
 #define COMMAND_MODE        0x80
 #define DATA_MODE			0x40
@@ -131,9 +132,9 @@ void GroveOLEDDisplay096::SetPageMode()
 void GroveOLEDDisplay096::Init()
 {
 	SendCommand(DISPLAY_OFF_CMD);
-	delay(5);
+	HalSystem::DelayMs(5);
 	SendCommand(DISPLAY_ON_CMD);
-	delay(5);
+	HalSystem::DelayMs(5);
 	SendCommand(NORMAL_DISPLAY_CMD);
 	SetPageMode();
 }
