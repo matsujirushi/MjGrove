@@ -34,10 +34,10 @@ uint8_t GroveTempHumiDHT11::DHT11ReadByte(HalGpio* gpio)
 		while (gpio->Read());
 
 		while (!gpio->Read());
-		unsigned long start = micros();
+		unsigned long start = HalSystem::ElapsedUs();
 
 		while (gpio->Read());
-		unsigned long finish = micros();
+		unsigned long finish = HalSystem::ElapsedUs();
 
 		if ((unsigned long)(finish - start) > 50) data |= 1 << (7 - i);
 	}

@@ -1,5 +1,5 @@
 #include "GroveUltrasonicRanger.h"
-#include <Arduino.h>
+#include "../HAL/HalSystem.h"
 
 unsigned long GroveUltrasonicRanger::MicrosDiff(unsigned long begin, unsigned long end)
 {
@@ -8,18 +8,18 @@ unsigned long GroveUltrasonicRanger::MicrosDiff(unsigned long begin, unsigned lo
 
 unsigned long GroveUltrasonicRanger::PulseIn(bool state, unsigned long timeout)
 {
-	auto begin = micros();
+	auto begin = HalSystem::ElapsedUs();
 
 	// wait for any previous pulse to end
-	while (_Pin->Read() == state) if (MicrosDiff(begin, micros()) >= timeout) return 0;
+	while (_Pin->Read() == state) if (MicrosDiff(begin, HalSystem::ElapsedUs()) >= timeout) return 0;
 
 	// wait for the pulse to start
-	while (_Pin->Read() != state) if (MicrosDiff(begin, micros()) >= timeout) return 0;
-	auto pulseBegin = micros();
+	while (_Pin->Read() != state) if (MicrosDiff(begin, HalSystem::ElapsedUs()) >= timeout) return 0;
+	auto pulseBegin = HalSystem::ElapsedUs();
 
 	// wait for the pulse to stop
-	while (_Pin->Read() == state) if (MicrosDiff(begin, micros()) >= timeout) return 0;
-	auto pulseEnd = micros();
+	while (_Pin->Read() == state) if (MicrosDiff(begin, HalSystem::ElapsedUs()) >= timeout) return 0;
+	auto pulseEnd = HalSystem::ElapsedUs();
 
 	return MicrosDiff(pulseBegin, pulseEnd);
 }

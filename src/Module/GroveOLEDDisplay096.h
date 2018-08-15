@@ -6,7 +6,6 @@
 
 #include "Abstract/GroveModule.h"
 #include "../Connector/GroveConnectorI2C.h"
-#include <Arduino.h>
 
 class GroveOLEDDisplay096 : public GroveModule, public Print
 {

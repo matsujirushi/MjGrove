@@ -17,4 +17,14 @@ public:
 		delayMicroseconds(microSeconds);
 	}
 
+	static unsigned long ElapsedMs()
+	{
+		return millis();
+	}
+
+	static unsigned long ElapsedUs()
+	{
+		return micros();
+	}
+
 };
