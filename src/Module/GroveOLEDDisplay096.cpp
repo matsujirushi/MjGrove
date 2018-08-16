@@ -1,11 +1,11 @@
 #include "GroveOLEDDisplay096.h"
 #include "../HAL/HalSystem.h"
 
-#define COMMAND_MODE        0x80
-#define DATA_MODE			0x40
-#define DISPLAY_OFF_CMD		0xae
-#define DISPLAY_ON_CMD		0xaf
-#define NORMAL_DISPLAY_CMD  0xa6
+#define COMMAND_MODE        (0x80)
+#define DATA_MODE			(0x40)
+#define DISPLAY_OFF_CMD		(0xae)
+#define DISPLAY_ON_CMD		(0xaf)
+#define NORMAL_DISPLAY_CMD  (0xa6)
 
 static const uint8_t BasicFont[][8] =
 {
