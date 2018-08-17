@@ -25,5 +25,18 @@ void setup() {
 }
 
 void loop() {
+  TempHumiBaro.Read();
+  
+  SerialUSB.print("Current humidity = ");
+  SerialUSB.print(TempHumiBaro.Humidity);
+  SerialUSB.print("%  ");
+  SerialUSB.print("temperature = ");
+  SerialUSB.print(TempHumiBaro.Temperature);
+  SerialUSB.print("C  ");
+  SerialUSB.print("pressure = ");
+  SerialUSB.print(TempHumiBaro.Pressure);
+  SerialUSB.println("Pa");
+
   delay(INTERVAL);
 }
+
