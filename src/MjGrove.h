@@ -24,3 +24,4 @@
 #include "Module/GroveTempOneWire.h"
 #include "Module/GroveLEDBar2.h"
 #include "Module/GroveTempHumiBaroBME280.h"
+#include "Module/GroveCircularLED.h"

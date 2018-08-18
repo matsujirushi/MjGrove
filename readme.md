@@ -30,6 +30,7 @@ Groveƒ‚ƒWƒ…[ƒ‹‚ÌƒNƒ‰ƒX‚ÆAGrove‘Î‰ƒ{[ƒh‚ÌƒNƒ‰ƒX‚ª—pˆÓ‚³‚ê‚Ä‚¨‚èA‚±‚Ì2‚Â‚ÌƒNƒ
 |<img src="https://statics3.seeedstudio.com/images/product/onewiretempsensor.jpg" width="100">|GroveTempOneWire|101990019|One Wire Temperature Sensor|grove-temp-one-wire||
 |<img src="https://statics3.seeedstudio.com/images/product/104020006%201.jpg" width="100">|GroveLEDBar2|104020006|[Grove LED Bar v2.0](http://wiki.seeedstudio.com/Grove-LED_Bar/)|grove-led-bar2||
 |<img src="https://statics3.seeedstudio.com/seeed/img/2016-09/6hLLXlBnfODAcWlp2wlaep3j.jpg" width="100">|GroveOLEDDisplay096|104030008|[Grove - OLED Display 0.96"](http://wiki.seeedstudio.com/Grove-OLED_Display_0.96inch/)|grove-oled-display-096||
+|<img src="https://statics3.seeedstudio.com/images/product/Grove%20Circular%20LED.jpg" width="100">|GroveCircularLED|104030013|[Grove - Circular LED](http://wiki.seeedstudio.com/Grove-Circular_LED/)||ì¬’†|
 |<img src="https://statics3.seeedstudio.com/seeed/img/2017-02/lJ51OXkwCFgmT6iAjE030rSd.jpg" width="100">|GroveBuzzer|107020000|[Grove - Buzzer](http://wiki.seeedstudio.com/Grove-Buzzer/)|grove-buzzer||
 |<img src="https://statics3.seeedstudio.com/images/product/High%20Temperature%20Sensor.jpg" width="100">|GroveHighTemp|111020002|[Grove - High Temperature Sensor](http://wiki.seeedstudio.com/Grove-High_Temperature_Sensor/)|grove-high-temp||
 |<img src="https://statics3.seeedstudio.com/seeed/img/2016-11/txvkIZ9IGno10T8UYi8KTvPS.jpg" width="100">|GroveGPS|113020003|[Grove - GPS](http://wiki.seeedstudio.com/Grove-GPS/)|grove-gps||
