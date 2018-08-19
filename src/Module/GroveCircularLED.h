@@ -10,8 +10,8 @@
 class GroveCircularLED : public GroveModule
 {
 private:
-	HalGpio * _PinDI;
 	HalGpio* _PinDCKI;
+	HalGpio* _PinDI;
 	float _BrightnessList[24];
 
 	void SendData(uint16_t data);
@@ -20,8 +20,8 @@ private:
 public:
 	GroveCircularLED(GroveConnectorDIO* connector)
 	{
-		_PinDI = &connector->P1;
-		_PinDCKI = &connector->P2;
+		_PinDCKI = &connector->P1;
+		_PinDI = &connector->P2;
 	}
 
 	void Init();
