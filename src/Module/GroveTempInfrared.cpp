@@ -1,7 +1,6 @@
 #include "GroveTempInfrared.h"
 
-
-static long res[100] =
+static long ThermistorTemperatureToResistance[100] =
 {
 	318300,302903,288329,274533,261471,249100,237381,226276,215750,205768,
 	196300,187316,178788,170691,163002,155700,148766,142183,135936,130012,
@@ -15,22 +14,9 @@ static long res[100] =
 	9063,8789,8525,8270,8023,7785,7555,7333,7118,6911
 };
 
-float GroveTempInfrared::binSearch(long x)
+static float internal_mapf(float x, float in_min, float in_max, float out_min, float out_max)
 {
-	int mid;
-	int low = 0;
-	int high = 100;
-
-	while (low <= high)
-	{
-		mid = (low + high) / 2;
-		if (x < res[mid])
-			low = mid + 1;
-		else
-			high = mid - 1;
-	}
-
-	return mid;
+	return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
 
 void GroveTempInfrared::Init()
@@ -42,6 +28,30 @@ void GroveTempInfrared::Read()
 	int tempValue = _Pin1->Read();
 	float thermistorVolt = tempValue * 3.3 / _Pin1->MAX_VALUE;
 	float thermistorResistance = thermistorVolt * 2000000 / (2.5 - thermistorVolt);
-	int thermistorTemperatureIndex = binSearch(thermistorResistance);
-	ThermistorTemperature = (thermistorTemperatureIndex - 1) + (res[thermistorTemperatureIndex - 1] - thermistorResistance) / (res[thermistorTemperatureIndex - 1] - res[thermistorTemperatureIndex]);
+
+	int thermistorTemperatureInt;
+	if (thermistorResistance > ThermistorTemperatureToResistance[0])
+	{
+		thermistorTemperatureInt = -1;
+	}
+	else
+	{
+		for (thermistorTemperatureInt = 0; thermistorTemperatureInt < (int)(sizeof(ThermistorTemperatureToResistance) / sizeof(ThermistorTemperatureToResistance[0]) - 1); thermistorTemperatureInt++)
+		{
+			if (thermistorResistance > ThermistorTemperatureToResistance[thermistorTemperatureInt + 1]) break;
+		}
+	}
+
+	if (thermistorTemperatureInt < 0)
+	{
+		ThermistorTemperature = 0.0f;
+	}
+	else if (thermistorTemperatureInt >= (int)(sizeof(ThermistorTemperatureToResistance) / sizeof(ThermistorTemperatureToResistance[0]) - 1))
+	{
+		ThermistorTemperature = 100.0f;
+	}
+	else
+	{
+		ThermistorTemperature = internal_mapf(thermistorResistance, ThermistorTemperatureToResistance[thermistorTemperatureInt], ThermistorTemperatureToResistance[thermistorTemperatureInt + 1], thermistorTemperatureInt, thermistorTemperatureInt + 1);
+	}
 }
