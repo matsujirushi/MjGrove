@@ -13,10 +13,12 @@ private:
 	HalAnalogIn* _Pin1;
 	HalAnalogIn* _Pin2;
 
-	static float binSearch(long x);
+	float ReadThermistorTemperature();
+	float ReadObjectTemperature(float thermistorTemperature);
 
 public:
 	float ThermistorTemperature;
+	float Temperature;
 
 public:
 	GroveTempInfrared(GroveConnectorAnalogIn* connector)

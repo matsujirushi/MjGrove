@@ -27,7 +27,9 @@ void setup() {
 void loop() {
   Temp.Read();
 
-  SerialUSB.println(Temp.ThermistorTemperature);
+  SerialUSB.print(Temp.ThermistorTemperature);
+  SerialUSB.print(" ");
+  SerialUSB.println(Temp.Temperature);
 
   delay(INTERVAL);
 }
