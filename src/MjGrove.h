@@ -25,4 +25,3 @@
 #include "Module/GroveLEDBar2.h"
 #include "Module/GroveTempHumiBaroBME280.h"
 #include "Module/GroveCircularLED.h"
-#include "Module/GroveTempInfrared.h"
