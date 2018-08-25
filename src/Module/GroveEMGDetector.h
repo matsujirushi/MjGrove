@@ -13,6 +13,9 @@ private:
 	HalAnalogIn* _Pin;
 
 public:
+	float Level;
+
+public:
 	GroveEMGDetector(GroveConnectorAnalogIn* connector)
 	{
 		_Pin = &connector->P1;
