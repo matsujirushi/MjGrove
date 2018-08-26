@@ -4,44 +4,20 @@
 
 #pragma once
 
-#include "Abstract/GroveModule.h"
-#include "../Connector/GroveConnectorDIO.h"
+#include "Abstract/GroveDigitalOutOnOff.h"
 
-class GroveBuzzer : public GroveModule
+class GroveBuzzer : public GroveDigitalOutOnOff
 {
 private:
 	HalGpio* _Pin;
 
 public:
-	GroveBuzzer(GroveConnectorDIO* connector)
+	GroveBuzzer(GroveConnectorDIO* connector) : GroveDigitalOutOnOff(connector)
 	{
-		_Pin = &connector->P1;
 	}
 
-	GroveBuzzer(HalGpio* pin)
+	GroveBuzzer(HalGpio* pin) : GroveDigitalOutOnOff(pin)
 	{
-		_Pin = pin;
-	}
-
-	void Init()
-	{
-		_Pin->SetMode(HalGpio::MODE_OUTPUT);
-		_Pin->Write(false);
-	}
-
-	void On()
-	{
-		_Pin->Write(true);
-	}
-
-	void Off()
-	{
-		_Pin->Write(false);
-	}
-
-	bool IsOn() const
-	{
-		return _Pin->ReadOutput();
 	}
 
 };
