@@ -26,3 +26,4 @@
 #include "Module/GroveTempHumiBaroBME280.h"
 #include "Module/GroveCircularLED.h"
 #include "Module/GroveEMGDetector.h"
+#include "Module/GroveRelay.h"
