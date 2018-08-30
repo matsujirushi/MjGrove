@@ -1,3 +1,5 @@
+#include "Grove4DigitDisplay.h"
+
 void Grove4DigitDisplay::Init()
 {
 	_PinClk->SetMode(HalGpio::MODE_OUTPUT);
