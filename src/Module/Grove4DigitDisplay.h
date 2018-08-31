@@ -13,13 +13,23 @@ private:
 	HalGpio* _PinClk;
 	HalGpio* _PinDio;
 
+	void TM1637Start();
+	void TM1637End();
+	void TM1637Write(uint8_t data);
+
+public:
+	float Brightness;
+
 public:
 	Grove4DigitDisplay(GroveConnectorDIO* connector)
 	{
+		Brightness = 0.5f;
 		_PinClk = &connector->P1;
 		_PinDio = &connector->P2;
 	}
 
 	void Init();
+	void print(int position, int value);
+	void print(int value);
 
 };

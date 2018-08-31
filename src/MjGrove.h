@@ -27,3 +27,4 @@
 #include "Module/GroveCircularLED.h"
 #include "Module/GroveEMGDetector.h"
 #include "Module/GroveRelay.h"
+#include "Module/Grove4DigitDisplay.h"

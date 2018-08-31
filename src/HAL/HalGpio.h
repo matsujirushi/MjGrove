@@ -13,6 +13,7 @@ public:
 	{
 		MODE_INPUT,
 		MODE_OUTPUT,
+		MODE_OUTPUT_OPEN_DRAIN,
 	};
 
 public:
@@ -34,6 +35,9 @@ public:
 			break;
 		case MODE_OUTPUT:
 			pinMode(_GpioPin, OUTPUT);
+			break;
+		case MODE_OUTPUT_OPEN_DRAIN:
+			pinMode(_GpioPin, OUTPUT_OPEN_DRAIN);
 			break;
 		}
 	}
