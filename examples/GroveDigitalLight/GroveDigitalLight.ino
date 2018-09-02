@@ -25,5 +25,10 @@ void setup() {
 }
 
 void loop() {
+  Light.Read();
+  
+  SerialUSB.print("Current lux = ");
+  SerialUSB.println(Light.Lux);
+
   delay(INTERVAL);
 }

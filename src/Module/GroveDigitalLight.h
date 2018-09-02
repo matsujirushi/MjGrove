@@ -12,6 +12,11 @@ class GroveDigitalLight : public GroveModule
 private:
 	HalI2CDevice* _Device;
 
+	void GetAdcValues(uint16_t* ch0, uint16_t* ch1);
+
+public:
+	float Lux;
+
 public:
 	GroveDigitalLight(GroveConnectorI2C* connector)
 	{
