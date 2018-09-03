@@ -29,3 +29,4 @@
 #include "Module/GroveRelay.h"
 #include "Module/Grove4DigitDisplay.h"
 #include "Module/GroveDigitalLight.h"
+#include "Module/GroveGasO2.h"
