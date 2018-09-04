@@ -30,3 +30,4 @@
 #include "Module/Grove4DigitDisplay.h"
 #include "Module/GroveDigitalLight.h"
 #include "Module/GroveGasO2.h"
+#include "Module/GroveTouch.h"
