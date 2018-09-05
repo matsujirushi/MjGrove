@@ -31,3 +31,4 @@
 #include "Module/GroveDigitalLight.h"
 #include "Module/GroveGasO2.h"
 #include "Module/GroveTouch.h"
+#include "Module/GroveMiniTrackBall.h"
