@@ -1,5 +1,10 @@
 #include "GroveMiniTrackBall.h"
 #include "../HAL/HalSystem.h"
+#include <MjGrove.h>
+
+#define READ_MODE	(0)
+#define WRITE_MODE	(1)
+
 
 enum MOTION_REG_ADDR
 {
@@ -40,9 +45,31 @@ enum LED_MODE
 	LED_MODE_NUM
 };
 
+void GroveMiniTrackBall::WriteByte(uint8_t reg, uint8_t value)
+{
+	uint8_t data[3];
+	data[0] = WRITE_MODE;
+	data[1] = reg;
+	data[2] = value;
+	_Device->Write(data, sizeof(data));
+}
+
+uint8_t GroveMiniTrackBall::ReadByte(uint8_t reg)
+{
+	uint8_t data[3];
+	data[0] = READ_MODE;
+	data[1] = reg;
+	data[2] = 1;
+	_Device->Write(data, sizeof(data));
+
+	_Device->Read(data, 1);
+	
+	return data[0];
+}
+
 void GroveMiniTrackBall::SetLedMode(uint8_t ledMode)
 {
-	_Device->WriteRegByte(CONFIG_REG_LED_MODE, ledMode);
+	WriteByte(CONFIG_REG_LED_MODE, ledMode);
 }
 
 void GroveMiniTrackBall::Init()
@@ -51,9 +78,23 @@ void GroveMiniTrackBall::Init()
 
 void GroveMiniTrackBall::Read()
 {
-	for (uint8_t i = 0; i < (uint8_t)LED_MODE_NUM; i++)
+	//for (uint8_t i = 0; i < (uint8_t)LED_MODE_NUM; i++)
+	//{
+	//	SetLedMode(i);
+	//	HalSystem::DelayMs(5000);
+	//}
+
+	for (int i = 0; i < 500; i++)
 	{
-		SetLedMode(i);
-		HalSystem::DelayMs(5000);
+		SerialUSB.print(ReadByte(MOTION_REG_UP));
+		SerialUSB.print("-");
+		SerialUSB.print(ReadByte(MOTION_REG_DOWN));
+		SerialUSB.print("-");
+		SerialUSB.print(ReadByte(MOTION_REG_LEFT));
+		SerialUSB.print("-");
+		SerialUSB.print(ReadByte(MOTION_REG_RIGHT));
+		SerialUSB.print("-");
+		SerialUSB.println(ReadByte(MOTION_REG_CONFIRM));
+		delay(100);
 	}
 }

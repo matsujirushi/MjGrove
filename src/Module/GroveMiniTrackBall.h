@@ -12,6 +12,9 @@ class GroveMiniTrackBall : public GroveModule
 private:
 	HalI2CDevice* _Device;
 
+	void WriteByte(uint8_t reg, uint8_t value);
+	uint8_t ReadByte(uint8_t reg);
+
 	void SetLedMode(uint8_t ledMode);
 
 
