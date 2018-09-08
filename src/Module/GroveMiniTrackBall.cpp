@@ -78,23 +78,14 @@ void GroveMiniTrackBall::Init()
 
 void GroveMiniTrackBall::Read()
 {
-	//for (uint8_t i = 0; i < (uint8_t)LED_MODE_NUM; i++)
-	//{
-	//	SetLedMode(i);
-	//	HalSystem::DelayMs(5000);
-	//}
+	UpCount = ReadByte(MOTION_REG_UP);
+	DownCount = ReadByte(MOTION_REG_DOWN);
+	LeftCount = ReadByte(MOTION_REG_LEFT);
+	RightCount = ReadByte(MOTION_REG_RIGHT);
+	ConfirmCount = ReadByte(MOTION_REG_CONFIRM);
 
-	for (int i = 0; i < 500; i++)
-	{
-		SerialUSB.print(ReadByte(MOTION_REG_UP));
-		SerialUSB.print("-");
-		SerialUSB.print(ReadByte(MOTION_REG_DOWN));
-		SerialUSB.print("-");
-		SerialUSB.print(ReadByte(MOTION_REG_LEFT));
-		SerialUSB.print("-");
-		SerialUSB.print(ReadByte(MOTION_REG_RIGHT));
-		SerialUSB.print("-");
-		SerialUSB.println(ReadByte(MOTION_REG_CONFIRM));
-		delay(100);
-	}
+	PositionX += RightCount;
+	PositionX -= LeftCount;
+	PositionY += UpCount;
+	PositionY -= DownCount;
 }

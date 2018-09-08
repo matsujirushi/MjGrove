@@ -17,11 +17,29 @@ private:
 
 	void SetLedMode(uint8_t ledMode);
 
+public:
+	int UpCount;
+	int DownCount;
+	int LeftCount;
+	int RightCount;
+	int ConfirmCount;
+
+	int PositionX;
+	int PositionY;
 
 public:
 	GroveMiniTrackBall(GroveConnectorI2C* connector)
 	{
 		_Device = connector->NewDevice(0x4A);	// I2C_ADDRESS
+
+		UpCount = 0;
+		DownCount = 0;
+		LeftCount = 0;
+		RightCount = 0;
+		ConfirmCount = 0;
+
+		PositionX = 0;
+		PositionY = 0;
 	}
 
 	void Init();
