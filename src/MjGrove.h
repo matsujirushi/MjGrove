@@ -32,3 +32,4 @@
 #include "Module/GroveGasO2.h"
 #include "Module/GroveTouch.h"
 #include "Module/GroveMiniTrackBall.h"
+#include "Module/GroveSpeechRecognizer.h"
