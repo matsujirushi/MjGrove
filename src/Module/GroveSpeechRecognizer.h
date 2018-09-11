@@ -13,7 +13,8 @@ class GroveSpeechRecognizer : public GroveModule
 public:
 	enum COMMAND_TYPE
 	{
-		TURN_ON_THE_LIGHT,
+		UNKNOWN = 0,
+		TURN_ON_THE_LIGHT = 1,
 		TURN_OFF_THE_LIGHT,
 		PLAY_MUSIC,
 		PAUSE,
@@ -39,19 +40,17 @@ public:
 
 private:
 	HalUART* _UART;
-	void(*_MessageReceivedCallback)(const char* message);
-	std::string _Message;
+	void(*_CommandReceivedCallback)(COMMAND_TYPE command);
 
 public:
 	GroveSpeechRecognizer(GroveConnectorUART* connector)
 	{
 		_UART = &connector->UART;
-		_MessageReceivedCallback = NULL;
-		_Message.clear();
+		_CommandReceivedCallback = NULL;
 	}
 
 	void Init();
-	void AttachMessageReceived(void(*callback)(const char* message));
+	void AttachCommandReceived(void(*callback)(COMMAND_TYPE command));
 	void DoWork();
 
 };

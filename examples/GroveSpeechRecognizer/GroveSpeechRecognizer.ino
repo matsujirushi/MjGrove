@@ -8,8 +8,8 @@ WioCellular Wio;
 GroveBoard Board;
 GroveSpeechRecognizer Speech(&Board.UART);
 
-void MessageReceived(const char* message) {
-  SerialUSB.println(message);
+void CommandReceived(GroveSpeechRecognizer::COMMAND_TYPE command) {
+  SerialUSB.println((int)command);
 }
 
 void setup() {
@@ -25,7 +25,7 @@ void setup() {
   Board.UART.Enable();
   Speech.Init();
   
-  Speech.AttachMessageReceived(MessageReceived);
+  Speech.AttachCommandReceived(CommandReceived);
 }
 
 void loop() {
