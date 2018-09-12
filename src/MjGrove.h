@@ -33,3 +33,4 @@
 #include "Module/GroveTouch.h"
 #include "Module/GroveMiniTrackBall.h"
 #include "Module/GroveSpeechRecognizer.h"
+#include "Module/GroveAirQuality.h"
