@@ -34,6 +34,7 @@ Groveƒ‚ƒWƒ…[ƒ‹‚ÌƒNƒ‰ƒX‚ÆAGrove‘Î‰ƒ{[ƒh‚ÌƒNƒ‰ƒX‚ª—pˆÓ‚³‚ê‚Ä‚¨‚èA‚±‚Ì2‚Â‚ÌƒNƒ
 |<img src="https://statics3.seeedstudio.com/seeed/img/2016-06/R425Ianm2Rr93qmJQFUEwGx7.jpg" width="100">|GroveTempHumiBaroBME280|101020193|[Grove - Temp&Humi&Barometer Sensor (BME280)](http://wiki.seeedstudio.com/Grove-Barometer_Sensor-BME280/)||
 |<img src="https://statics3.seeedstudio.com/seeed/img/2016-06/cmJT8HtXruW9KsyjBBeqDNT9.jpg" width="100">|GroveTempHumiSHT31|101020212|[Grove - Temperature&Humidity Sensor (SHT31)](http://wiki.seeedstudio.com/Grove-TempAndHumi_Sensor-SHT31/)||
 |<img src="https://statics3.seeedstudio.com/seeed/img/2016-09/mgPnvDQ0Qn1UbtrHuivjpyrb.jpg" width="100">|GroveSpeechRecognizer|101020232|[Grove - Speech Recognizer](http://wiki.seeedstudio.com/Grove-Speech_Recognizer/)||
+|<img src="https://statics3.seeedstudio.com/seeed/file/2017-06/bazaar482888_1.jpg" width="100">|GroveI2CColorSensor2|101020341|[Grove - I2C Color Sensor V2](https://www.seeedstudio.com/Grove-I2C-Color-Sensor-V2-p-2890.html)|ì¬’†|
 |<img src="https://statics3.seeedstudio.com/images/product/onewiretempsensor.jpg" width="100">|GroveTempOneWire|101990019|One Wire Temperature Sensor||
 |<img src="https://statics3.seeedstudio.com/seeed/file/2018-07/bazaar881127_3.jpg" width="100">|GroveRelay|103020005|[Grove - Relay](http://wiki.seeedstudio.com/Grove-Relay/)||
 |<img src="https://statics3.seeedstudio.com/images/product/104020006%201.jpg" width="100">|GroveLEDBar2|104020006|[Grove LED Bar v2.0](http://wiki.seeedstudio.com/Grove-LED_Bar/)||

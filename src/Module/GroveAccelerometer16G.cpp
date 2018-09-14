@@ -2,7 +2,6 @@
 #include "Abstract/GroveModuleError.h"
 #include <math.h>
 
-#define I2C_ADDRESS   (0x53)
 #define REG_POWER_CTL (0x2d)
 #define REG_DATAX0    (0x32)
 

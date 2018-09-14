@@ -34,3 +34,4 @@
 #include "Module/GroveMiniTrackBall.h"
 #include "Module/GroveSpeechRecognizer.h"
 //#include "Module/GroveAirQuality.h"
+#include "Module/GroveI2CColorSensor2.h"
