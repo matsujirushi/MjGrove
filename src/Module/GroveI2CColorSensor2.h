@@ -12,6 +12,9 @@ class GroveI2CColorSensor2 : public GroveModule
 private:
 	HalI2CDevice* _Device;
 
+	void write8(uint8_t reg, uint8_t value);
+	uint8_t read8(uint8_t reg);
+
 public:
 	GroveI2CColorSensor2(GroveConnectorI2C* connector)
 	{
