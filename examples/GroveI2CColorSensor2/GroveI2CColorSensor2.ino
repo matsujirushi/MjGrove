@@ -25,5 +25,14 @@ void setup() {
 }
 
 void loop() {
+  ColorSensor.Read();
+  SerialUSB.print(ColorSensor.R);
+  SerialUSB.print(" ");
+  SerialUSB.print(ColorSensor.G);
+  SerialUSB.print(" ");
+  SerialUSB.print(ColorSensor.B);
+  SerialUSB.print(" ");
+  SerialUSB.println(ColorSensor.C);
+  
   delay(INTERVAL);
 }
