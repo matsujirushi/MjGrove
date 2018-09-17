@@ -57,35 +57,58 @@ void GroveI2CColorSensor2::enable()
 	write8(TCS34725_ENABLE, TCS34725_ENABLE_PON | TCS34725_ENABLE_AEN);
 }
 
-void GroveI2CColorSensor2::setIntegrationTime(tcs34725IntegrationTime_t it)
-{
-	write8(TCS34725_ATIME, it);
-}
-
-void GroveI2CColorSensor2::setGain(tcs34725Gain_t gain)
-{
-	write8(TCS34725_CONTROL, gain);
-}
-
 void GroveI2CColorSensor2::getRawData(uint16_t* r, uint16_t* g, uint16_t* b, uint16_t* c)
 {
 	*c = read16(TCS34725_CDATAL);
 	*r = read16(TCS34725_RDATAL);
 	*g = read16(TCS34725_GDATAL);
 	*b = read16(TCS34725_BDATAL);
-
-	/* Set a delay for the integration time */
-	delay(3);
 }
+
 void GroveI2CColorSensor2::Init()
 {
 	uint8_t x = read8(TCS34725_ID);
 	if (x != 0x44 && x != 0x10) GROVE_MODULE_ERROR("exception");
 
-	setIntegrationTime(TCS34725_INTEGRATIONTIME_2_4MS);
-	setGain(TCS34725_GAIN_1X);
-
 	enable();
+
+	SetIntegrationTime(2.4);
+	SetGain(1);
+}
+
+void GroveI2CColorSensor2::SetIntegrationTime(float time)
+{
+	if (time < 2.4f) time = 2.4f;
+	if (time > 614.0f) time = 614.0f;
+
+	uint8_t atime = (uint8_t)(256.0f - time / 2.4f);
+
+	write8(TCS34725_ATIME, atime);
+}
+
+void GroveI2CColorSensor2::SetGain(int gain)
+{
+	uint8_t gainValue;
+
+	switch (gain)
+	{
+	case 1:
+		gainValue = 0x00;
+		break;
+	case 4:
+		gainValue = 0x01;
+		break;
+	case 16:
+		gainValue = 0x02;
+		break;
+	case 60:
+		gainValue = 0x03;
+		break;
+	default:
+		GROVE_MODULE_ERROR("exception");
+	}
+
+	write8(TCS34725_CONTROL, gainValue);
 }
 
 void GroveI2CColorSensor2::Read()
