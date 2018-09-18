@@ -5,8 +5,6 @@
 #include <WioLTEforArduino.h>	// https://github.com/SeeedJP/WioLTEforArduino
 #include <Wire.h>
 
-typedef WioLTE WioCellular;
-
 #include "../Connector/GroveConnectorDIO.h"
 #include "../Connector/GroveConnectorUART.h"
 #include "../Connector/GroveConnectorI2C.h"
