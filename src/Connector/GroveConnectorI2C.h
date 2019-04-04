@@ -1,8 +1,7 @@
 #pragma once
 
 #include "GroveConnector.h"
-#include "../HAL/HalI2C.h"
-#include "../HAL/HalI2CDevice.h"
+#include "../HAL2/Hal.h"
 
 class GroveConnectorI2C : public GroveConnector
 {
@@ -14,9 +13,8 @@ public:
 	{
 	}
 
-	void Enable()
+	void Enable()	// TODO
 	{
-		_I2C.Enable();
 	}
 
 	HalI2CDevice* NewDevice(uint8_t slaveAddress)

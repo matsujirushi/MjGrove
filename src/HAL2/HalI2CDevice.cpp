@@ -1,4 +1,5 @@
 #include "HalI2CDevice.h"
+#include <string.h>
 
 void HalI2CDevice::WriteRegByte(uint8_t reg, uint8_t data)
 {

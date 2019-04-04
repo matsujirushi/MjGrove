@@ -14,6 +14,7 @@ public:
 		_Pin = pin;
 	}
 
+protected:
 	virtual void SetModeImplement(ModeType mode)
 	{
 		switch (mode)

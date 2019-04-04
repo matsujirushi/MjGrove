@@ -1,7 +1,7 @@
 #pragma once
 
 #include "GroveConnector.h"
-#include "../HAL2/HalGpio.h"
+#include "../HAL2/Hal.h"
 
 class GroveConnectorDIO : public GroveConnector
 {
@@ -14,7 +14,7 @@ public:
 	{
 	}
 
-	void Enable()
+	void Enable()	// TODO
 	{
 	}
 

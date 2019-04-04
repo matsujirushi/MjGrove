@@ -1,11 +1,6 @@
-#include "HalI2C.h"
+#include "HalI2CImpl.h"
 
-void HalI2C::Enable()
-{
-	_Wire->begin();
-}
-
-void HalI2C::Write(uint8_t slaveAddress, const uint8_t* data, int dataSize)
+void HalI2C::WriteImplement(int slaveAddress, const uint8_t* data, int dataSize)
 {
 	_Wire->beginTransmission(slaveAddress);
 	while (dataSize--)
@@ -15,7 +10,7 @@ void HalI2C::Write(uint8_t slaveAddress, const uint8_t* data, int dataSize)
 	_Wire->endTransmission();
 }
 
-int HalI2C::Read(uint8_t slaveAddress, uint8_t* data, int dataSize)
+int HalI2C::ReadImplement(int slaveAddress, uint8_t* data, int dataSize)
 {
 	uint8_t readSize = _Wire->requestFrom(slaveAddress, dataSize);
 	dataSize = readSize;

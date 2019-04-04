@@ -61,6 +61,7 @@ public:
 		return ReadImplement() == _Positive;
 	}
 
+protected:
 	virtual void SetModeImplement(ModeType mode) = 0;
 	virtual void WriteImplement(bool high) = 0;
 	virtual bool ReadImplement() const = 0;
