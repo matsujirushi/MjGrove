@@ -1,7 +1,7 @@
 #pragma once
 
 #include "GroveConnector.h"
-#include "../HAL/HalGpio.h"
+#include "../HAL2/HalGpio.h"
 
 class GroveConnectorDIO : public GroveConnector
 {
@@ -16,8 +16,6 @@ public:
 
 	void Enable()
 	{
-		P1.Enable();
-		P2.Enable();
 	}
 
 };
