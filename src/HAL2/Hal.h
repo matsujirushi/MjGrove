@@ -4,6 +4,7 @@
 
 #include "Arduino/stm32/HalGpioImpl.h"
 #include "Arduino/stm32/HalI2CImpl.h"
+#include "Arduino/stm32/HalAnalogInImpl.h"
 
 #else
 

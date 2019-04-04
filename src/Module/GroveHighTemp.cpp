@@ -10,9 +10,9 @@ static const float Var_VtoT_K[3][10] =
 
 float GroveHighTemp::ReadReferenceJunctionTemperature() const
 {
-	int v = _Pin2->Read();
+	float v = _Pin2->Read();
 
-	float resistance = (float)(_Pin2->MAX_VALUE - v) * 10000 / v;
+	float resistance = (1.0f - v) * 10000 / v;
 	float temperature = 1 / (log(resistance / 10000) / 3975 + 1 / 298.15) - 273.15;	// TTC3A103*39H
 
 	return temperature;
@@ -20,7 +20,7 @@ float GroveHighTemp::ReadReferenceJunctionTemperature() const
 
 float GroveHighTemp::ReadThermocoupleTemperature() const
 {
-	float vout = (float)_Pin1->Read() * 3.3 / _Pin1->MAX_VALUE;
+	float vout = _Pin1->Read() * 3.3;
 	float vin = (vout - 0.35) / 54.16;
 	float mv = vin * 1000;
 

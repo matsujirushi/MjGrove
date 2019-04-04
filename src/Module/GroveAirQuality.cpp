@@ -6,7 +6,7 @@ void GroveAirQuality::Init()
 
 void GroveAirQuality::Read()
 {
-	float vl = (float)_Pin->Read() * 3.3f / _Pin->MAX_VALUE;
+	float vl = _Pin->Read() * 3.3f;
 	float rs = (3.3f - vl) / (vl / 10000.0f);
 
 	Resistance = rs;

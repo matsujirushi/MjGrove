@@ -45,7 +45,7 @@ public:
 		return _Mode;
 	}
 
-	virtual void Write(bool on)
+	void Write(bool on)
 	{
 		WriteImplement(on == _Positive);
 		_Output = on;
@@ -56,7 +56,7 @@ public:
 		return _Output;
 	}
 
-	virtual bool Read()
+	bool Read()
 	{
 		return ReadImplement() == _Positive;
 	}
