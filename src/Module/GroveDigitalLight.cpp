@@ -1,5 +1,5 @@
 ﻿#include "GroveDigitalLight.h"
-#include "../HAL/HalSystem.h"
+#include "../HAL2/Hal.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 // Calculation code from TSL2561 data sheet

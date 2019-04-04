@@ -3,8 +3,9 @@
 #if defined ARDUINO_ARCH_STM32
 
 #include "Arduino/stm32/HalGpioImpl.h"
-#include "Arduino/stm32/HalI2CImpl.h"
 #include "Arduino/stm32/HalAnalogInImpl.h"
+#include "Arduino/stm32/HalI2CImpl.h"
+#include "Arduino/stm32/HalSystemImpl.h"
 
 #else
 

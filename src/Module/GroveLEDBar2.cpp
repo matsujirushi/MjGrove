@@ -1,5 +1,5 @@
 #include "GroveLEDBar2.h"
-#include "../HAL/HalSystem.h"
+#include "../HAL2/Hal.h"
 
 void GroveLEDBar2::SendData(uint16_t data)
 {

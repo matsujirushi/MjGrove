@@ -1,6 +1,6 @@
 #include "GroveTempHumiDHT11.h"
 #include "Abstract/GroveModuleError.h"
-#include "../HAL/HalSystem.h"
+#include "../HAL2/Hal.h"
 
 void GroveTempHumiDHT11::DHT11Init(HalGpio* gpio)
 {
@@ -34,10 +34,10 @@ uint8_t GroveTempHumiDHT11::DHT11ReadByte(HalGpio* gpio)
 		while (gpio->Read());
 
 		while (!gpio->Read());
-		unsigned long start = HalSystem::ElapsedUs();
+		unsigned long start = HalSystem::ClockUs();
 
 		while (gpio->Read());
-		unsigned long finish = HalSystem::ElapsedUs();
+		unsigned long finish = HalSystem::ClockUs();
 
 		if ((unsigned long)(finish - start) > 50) data |= 1 << (7 - i);
 	}

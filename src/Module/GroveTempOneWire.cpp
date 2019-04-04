@@ -1,6 +1,6 @@
 #include "GroveTempOneWire.h"
 #include "Abstract/GroveModuleError.h"
-#include "../HAL/HalSystem.h"
+#include "../HAL2/Hal.h"
 
 void GroveTempOneWire::PinWrite(int value)
 {

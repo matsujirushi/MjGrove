@@ -1,5 +1,5 @@
 #include "Grove4DigitDisplay.h"
-#include "../HAL/HalSystem.h"
+#include "../HAL2/Hal.h"
 
 #define ADDR_FIXED		(0x44)
 

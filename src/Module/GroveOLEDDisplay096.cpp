@@ -1,5 +1,5 @@
 #include "GroveOLEDDisplay096.h"
-#include "../HAL/HalSystem.h"
+#include "../HAL2/Hal.h"
 
 #define COMMAND_MODE        (0x80)
 #define DATA_MODE			(0x40)

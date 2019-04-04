@@ -7,22 +7,22 @@ class HalSystem
 public:
 	HalSystem() = delete;
 
-	static void DelayMs(int milliSeconds)
+	static void DelayMs(uint32_t milliSeconds)
 	{
 		delay(milliSeconds);
 	}
 
-	static void DelayUs(int microSeconds)
+	static void DelayUs(uint32_t microSeconds)
 	{
 		delayMicroseconds(microSeconds);
 	}
 
-	static unsigned long ElapsedMs()
+	static uint32_t ClockMs()	// TODO
 	{
 		return millis();
 	}
 
-	static unsigned long ElapsedUs()
+	static uint32_t ClockUs()	// TODO
 	{
 		return micros();
 	}

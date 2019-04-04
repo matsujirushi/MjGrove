@@ -1,5 +1,5 @@
 #include "GroveUltrasonicRanger.h"
-#include "../HAL/HalSystem.h"
+#include "../HAL2/Hal.h"
 
 unsigned long GroveUltrasonicRanger::MicrosDiff(unsigned long begin, unsigned long end)
 {
@@ -8,18 +8,18 @@ unsigned long GroveUltrasonicRanger::MicrosDiff(unsigned long begin, unsigned lo
 
 unsigned long GroveUltrasonicRanger::PulseIn(bool state, unsigned long timeout)
 {
-	auto begin = HalSystem::ElapsedUs();
+	auto begin = HalSystem::ClockUs();
 
 	// wait for any previous pulse to end
-	while (_Pin->Read() == state) if (MicrosDiff(begin, HalSystem::ElapsedUs()) >= timeout) return 0;
+	while (_Pin->Read() == state) if (MicrosDiff(begin, HalSystem::ClockUs()) >= timeout) return 0;
 
 	// wait for the pulse to start
-	while (_Pin->Read() != state) if (MicrosDiff(begin, HalSystem::ElapsedUs()) >= timeout) return 0;
-	auto pulseBegin = HalSystem::ElapsedUs();
+	while (_Pin->Read() != state) if (MicrosDiff(begin, HalSystem::ClockUs()) >= timeout) return 0;
+	auto pulseBegin = HalSystem::ClockUs();
 
 	// wait for the pulse to stop
-	while (_Pin->Read() == state) if (MicrosDiff(begin, HalSystem::ElapsedUs()) >= timeout) return 0;
-	auto pulseEnd = HalSystem::ElapsedUs();
+	while (_Pin->Read() == state) if (MicrosDiff(begin, HalSystem::ClockUs()) >= timeout) return 0;
+	auto pulseEnd = HalSystem::ClockUs();
 
 	return MicrosDiff(pulseBegin, pulseEnd);
 }

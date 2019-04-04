@@ -1,6 +1,5 @@
 #include "GroveMiniTrackBall.h"
-#include "../HAL/HalSystem.h"
-#include <MjGrove.h>
+#include "../HAL2/Hal.h"
 
 #define READ_MODE	(0)
 #define WRITE_MODE	(1)
