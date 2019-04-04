@@ -7,13 +7,13 @@
 
 void GroveAccelerometer16G::Init()
 {
-	_Device->WriteRegByte(REG_POWER_CTL, 0x08);
+	_Device->WriteReg8(REG_POWER_CTL, 0x08);
 }
 
 void GroveAccelerometer16G::Read()
 {
 	uint8_t readData[6];
-	if (_Device->ReadRegBytes(REG_DATAX0, readData, sizeof(readData)) != 6) GROVE_MODULE_ERROR("exception");
+	if (_Device->ReadRegN(REG_DATAX0, readData, sizeof(readData)) != 6) GROVE_MODULE_ERROR("exception");
 
 	int16_t val;
 

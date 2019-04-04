@@ -306,31 +306,31 @@ void GroveDigitalLight::GetAdcValues(uint16_t* ch0, uint16_t* ch1)
 	uint8_t low;
 	uint8_t high;
 
-	_Device->ReadRegByte(TSL2561_DATA0LOW, &low);
-	_Device->ReadRegByte(TSL2561_DATA0HIGH, &high);
+	_Device->ReadReg8(TSL2561_DATA0LOW, &low);
+	_Device->ReadReg8(TSL2561_DATA0HIGH, &high);
 	*ch0 = (high << 8) | low;
 
-	_Device->ReadRegByte(TSL2561_DATA1LOW, &low);
-	_Device->ReadRegByte(TSL2561_DATA1HIGH, &high);
+	_Device->ReadReg8(TSL2561_DATA1LOW, &low);
+	_Device->ReadReg8(TSL2561_DATA1HIGH, &high);
 	*ch1 = (high << 8) | low;
 }
 
 void GroveDigitalLight::Init()
 {
-	_Device->WriteRegByte(TSL2561_CONTROL, 0x03);	// POWER UP
-	_Device->WriteRegByte(TSL2561_TIMING, 0x00);	// No High Gain (1x), integration time of 13ms
-	_Device->WriteRegByte(TSL2561_INTERRUPT, 0x00);
-	_Device->WriteRegByte(TSL2561_CONTROL, 0x00);	// POWER Down
+	_Device->WriteReg8(TSL2561_CONTROL, 0x03);	// POWER UP
+	_Device->WriteReg8(TSL2561_TIMING, 0x00);	// No High Gain (1x), integration time of 13ms
+	_Device->WriteReg8(TSL2561_INTERRUPT, 0x00);
+	_Device->WriteReg8(TSL2561_CONTROL, 0x00);	// POWER Down
 }
 
 void GroveDigitalLight::Read()
 {
-	_Device->WriteRegByte(TSL2561_CONTROL, 0x03);	// POWER UP
+	_Device->WriteReg8(TSL2561_CONTROL, 0x03);	// POWER UP
 	HalSystem::DelayMs(14);
 	uint16_t ch0;
 	uint16_t ch1;
 	GetAdcValues(&ch0, &ch1);
 
-	_Device->WriteRegByte(TSL2561_CONTROL, 0x00);	// POWER Down
+	_Device->WriteReg8(TSL2561_CONTROL, 0x00);	// POWER Down
 	Lux = CalculateLux(0, 0, ch0, ch1, 0);  // T package, no gain, 13ms
 }

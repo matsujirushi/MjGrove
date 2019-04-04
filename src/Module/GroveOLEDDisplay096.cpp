@@ -109,12 +109,12 @@ static const uint8_t BasicFont[][8] =
 
 void GroveOLEDDisplay096::SendCommand(uint8_t cmd)
 {
-	_Device->WriteRegByte(COMMAND_MODE, cmd);
+	_Device->WriteReg8(COMMAND_MODE, cmd);
 }
 
 void GroveOLEDDisplay096::SendData(uint8_t data)
 {
-	_Device->WriteRegByte(DATA_MODE, data);
+	_Device->WriteReg8(DATA_MODE, data);
 }
 
 void GroveOLEDDisplay096::SetHorizontalMode()

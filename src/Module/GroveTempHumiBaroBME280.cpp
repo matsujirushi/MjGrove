@@ -33,7 +33,7 @@ uint8_t GroveTempHumiBaroBME280::ReadReg8(uint8_t reg)
 {
 	uint8_t data;
 
-	_Device->ReadRegByte(reg, &data);
+	_Device->ReadReg8(reg, &data);
 
 	return data;
 }
@@ -42,7 +42,7 @@ uint16_t GroveTempHumiBaroBME280::ReadReg16(uint8_t reg)
 {
 	uint8_t data[2];
 
-	_Device->ReadRegBytes(reg, data, sizeof(data));
+	_Device->ReadRegN(reg, data, sizeof(data));
 
 	return (uint16_t)data[0] << 8 | data[1];
 }
@@ -51,7 +51,7 @@ uint16_t GroveTempHumiBaroBME280::ReadReg16LE(uint8_t reg)
 {
 	uint8_t data[2];
 
-	_Device->ReadRegBytes(reg, data, sizeof(data));
+	_Device->ReadRegN(reg, data, sizeof(data));
 
 	return (uint16_t)data[1] << 8 | data[0];
 }
@@ -70,7 +70,7 @@ uint32_t GroveTempHumiBaroBME280::ReadReg24(uint8_t reg)
 {
 	uint8_t data[3];
 
-	_Device->ReadRegBytes(reg, data, sizeof(data));
+	_Device->ReadRegN(reg, data, sizeof(data));
 
 	return (uint32_t)data[0] << 16 | (uint32_t)data[1] << 8 | data[2];
 }
@@ -100,8 +100,8 @@ void GroveTempHumiBaroBME280::Init()
 	dig_H5 = (ReadReg8(BME280_REG_DIG_H5 + 1) << 4) | (0x0F & ReadReg8(BME280_REG_DIG_H5) >> 4);
 	dig_H6 = (int8_t)ReadReg8(BME280_REG_DIG_H6);
 
-	_Device->WriteRegByte(BME280_REG_CONTROLHUMID, 0x05);
-	_Device->WriteRegByte(BME280_REG_CONTROL, 0xB7);
+	_Device->WriteReg8(BME280_REG_CONTROLHUMID, 0x05);
+	_Device->WriteReg8(BME280_REG_CONTROL, 0xB7);
 }
 
 void GroveTempHumiBaroBME280::Read()
