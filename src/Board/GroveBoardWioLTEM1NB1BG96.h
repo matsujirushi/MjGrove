@@ -2,7 +2,7 @@
 
 #if defined ARDUINO_WIO_LTE_M1NB1_BG96
 
-#include <Wio3GforArduino.h>  // https://github.com/SeeedJP/Wio_3G_for_Arduino
+#include <WioCellLibforArduino.h>	// https://github.com/SeeedJP/Wio_cell_lib_for_Arduino
 
 #include "../Connector/GroveConnectorDIO.h"
 #include "../Connector/GroveConnectorUART.h"
