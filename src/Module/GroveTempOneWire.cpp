@@ -6,11 +6,11 @@ void GroveTempOneWire::PinWrite(int value)
 {
 	if (value)
 	{
-		_Pin->SetMode(HalGpio::MODE_INPUT);
+		_Pin->Enable(HalGpio::MODE_INPUT);
 	}
 	else
 	{
-		_Pin->SetMode(HalGpio::MODE_OUTPUT);
+		_Pin->Enable(HalGpio::MODE_OUTPUT);
 		_Pin->Write(false);
 	}
 }

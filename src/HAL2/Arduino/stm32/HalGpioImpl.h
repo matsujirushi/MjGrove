@@ -15,7 +15,7 @@ public:
 	}
 
 protected:
-	virtual void SetModeImplement(ModeType mode)
+	virtual void EnableImplement(ModeType mode)
 	{
 		switch (mode)
 		{

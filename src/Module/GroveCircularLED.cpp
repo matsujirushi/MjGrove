@@ -35,9 +35,9 @@ void GroveCircularLED::LatchData()
 
 void GroveCircularLED::Init()
 {
-	_PinDI->SetMode(HalGpio::MODE_OUTPUT);
+	_PinDI->Enable(HalGpio::MODE_OUTPUT);
 	_PinDI->Write(false);
-	_PinDCKI->SetMode(HalGpio::MODE_OUTPUT);
+	_PinDCKI->Enable(HalGpio::MODE_OUTPUT);
 	_PinDCKI->Write(false);
 
 	Clear();

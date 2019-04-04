@@ -21,7 +21,7 @@ public:
 
 	void Init()
 	{
-		_Pin->SetMode(HalGpio::MODE_OUTPUT);
+		_Pin->Enable(HalGpio::MODE_OUTPUT);
 		_Pin->Write(false);
 	}
 

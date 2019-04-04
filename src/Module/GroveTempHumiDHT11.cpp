@@ -4,7 +4,7 @@
 
 void GroveTempHumiDHT11::DHT11Init(HalGpio* gpio)
 {
-	gpio->SetMode(HalGpio::MODE_OUTPUT);
+	gpio->Enable(HalGpio::MODE_OUTPUT);
 	gpio->Write(true);
 }
 
@@ -15,7 +15,7 @@ void GroveTempHumiDHT11::DHT11Start(HalGpio* gpio)
 	HalSystem::DelayMs(18);
 
 	// Pulled up to wait for
-	gpio->SetMode(HalGpio::MODE_INPUT);
+	gpio->Enable(HalGpio::MODE_INPUT);
 	while (!gpio->Read());
 
 	// Response signal
@@ -50,7 +50,7 @@ void GroveTempHumiDHT11::DHT11Finish(HalGpio* gpio)
 	// Releases the bus
 	while (!gpio->Read());
 	gpio->Write(true);
-	gpio->SetMode(HalGpio::MODE_OUTPUT);
+	gpio->Enable(HalGpio::MODE_OUTPUT);
 }
 
 bool GroveTempHumiDHT11::DHT11Check(const uint8_t* data, int dataSize)

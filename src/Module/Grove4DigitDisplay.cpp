@@ -53,9 +53,9 @@ void Grove4DigitDisplay::TM1637Write(uint8_t data)
 
 void Grove4DigitDisplay::Init()
 {
-	_PinClk->SetMode(HalGpio::MODE_OUTPUT);
+	_PinClk->Enable(HalGpio::MODE_OUTPUT);
 	_PinClk->Write(true);
-	_PinDio->SetMode(HalGpio::MODE_OUTPUT_OPEN_DRAIN);
+	_PinDio->Enable(HalGpio::MODE_OUTPUT_OPEN_DRAIN);
 	_PinDio->Write(true);
 }
 

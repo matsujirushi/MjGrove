@@ -14,7 +14,7 @@ public:
 	{
 	}
 
-	void Enable()	// TODO
+	void Enable()
 	{
 	}
 

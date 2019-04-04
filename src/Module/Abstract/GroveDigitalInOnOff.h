@@ -21,7 +21,7 @@ public:
 
 	void Init()
 	{
-		_Pin->SetMode(HalGpio::MODE_INPUT);
+		_Pin->Enable(HalGpio::MODE_INPUT);
 	}
 
 	bool IsOn() const
