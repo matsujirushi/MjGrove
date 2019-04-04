@@ -1,5 +1,11 @@
 #include "HalI2CImpl.h"
 
+void HalI2C::EnableImplement(int frequency)
+{
+	_Wire->begin();
+	_Wire->setClock(frequency);
+}
+
 void HalI2C::WriteImplement(int slaveAddress, const uint8_t* data, int dataSize)
 {
 	_Wire->beginTransmission(slaveAddress);

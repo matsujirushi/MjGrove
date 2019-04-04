@@ -14,6 +14,7 @@ public:
 	}
 
 protected:
+	virtual void EnableImplement(int frequency);
 	virtual void WriteImplement(int slaveAddress, const uint8_t* data, int dataSize);
 	virtual int ReadImplement(int slaveAddress, uint8_t* data, int dataSize);
 
