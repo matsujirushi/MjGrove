@@ -5,11 +5,6 @@
 #include <WioLTEforArduino.h>	// https://github.com/SeeedJP/WioLTEforArduino
 #include <Wire.h>
 
-#include "../Connector/GroveConnectorDIO.h"
-#include "../Connector/GroveConnectorUART.h"
-#include "../Connector/GroveConnectorI2C.h"
-#include "../Connector/GroveConnectorAnalogIn.h"
-
 class GroveBoard
 {
 public:

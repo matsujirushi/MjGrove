@@ -1,14 +1,17 @@
 #pragma once
 
-#if defined ARDUINO_STM32F4_WIO_GPS
-#include "Board/GroveBoardWioLTE.h"
-#elif defined ARDUINO_WIO_3G
-#include "Board/GroveBoardWio3G.h"
-#elif defined ARDUINO_WIO_LTE_M1NB1_BG96
-#include "Board/GroveBoardWioLTEM1NB1BG96.h"
-#else
-#error "This board is not supported."
-#endif
+// HAL
+
+#include "HAL/Hal.h"
+
+// Connector
+
+#include "Connector/GroveConnectorAnalogIn.h"
+#include "Connector/GroveConnectorDIO.h"
+#include "Connector/GroveConnectorI2C.h"
+#include "Connector/GroveConnectorUART.h"
+
+// Module
 
 #include "Module/GroveBuzzer.h"
 #include "Module/GroveButton.h"
@@ -35,3 +38,13 @@
 #include "Module/GroveSpeechRecognizer.h"
 //#include "Module/GroveAirQuality.h"
 #include "Module/GroveI2CColorSensor2.h"
+
+// Board
+
+#if defined ARDUINO_STM32F4_WIO_GPS
+#include "Board/STM32F4_WIO_GPS/GroveBoard.h"
+#elif defined ARDUINO_WIO_3G
+#include "Board/WIO_3G/GroveBoard.h"
+#elif defined ARDUINO_WIO_LTE_M1NB1_BG96
+#include "Board/WIO_LTE_M1NB1_BG96/GroveBoard.h"
+#endif

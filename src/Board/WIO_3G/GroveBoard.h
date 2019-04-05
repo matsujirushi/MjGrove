@@ -1,13 +1,8 @@
 #pragma once
 
-#if defined ARDUINO_WIO_LTE_M1NB1_BG96
+#if defined ARDUINO_WIO_3G
 
 #include <WioCellLibforArduino.h>	// https://github.com/SeeedJP/Wio_cell_lib_for_Arduino
-
-#include "../Connector/GroveConnectorDIO.h"
-#include "../Connector/GroveConnectorUART.h"
-#include "../Connector/GroveConnectorI2C.h"
-#include "../Connector/GroveConnectorAnalogIn.h"
 
 class GroveBoard
 {
@@ -39,4 +34,4 @@ public:
 
 };
 
-#endif // ARDUINO_WIO_LTE_M1NB1_BG96
+#endif // ARDUINO_WIO_3G

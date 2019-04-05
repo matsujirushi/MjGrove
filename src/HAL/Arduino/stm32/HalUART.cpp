@@ -1,4 +1,6 @@
-#include "HalUARTImpl.h"
+#if defined ARDUINO_ARCH_STM32
+
+#include "HalUART.h"
 
 void HalUART::EnableImplement(int baudRate, int dataBit, ParityType parity, int stopBit)
 {
@@ -36,3 +38,5 @@ uint8_t HalUART::ReadImplement()
 {
 	return _Serial->read();
 }
+
+#endif // ARDUINO_ARCH_STM32

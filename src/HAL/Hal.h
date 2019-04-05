@@ -2,11 +2,11 @@
 
 #if defined ARDUINO_ARCH_STM32
 
-#include "Arduino/stm32/HalGpioImpl.h"
-#include "Arduino/stm32/HalAnalogInImpl.h"
-#include "Arduino/stm32/HalI2CImpl.h"
-#include "Arduino/stm32/HalSystemImpl.h"
-#include "Arduino/stm32/HalUARTImpl.h"
+#include "HAL/Arduino/stm32/HalGpio.h"
+#include "HAL/Arduino/stm32/HalAnalogIn.h"
+#include "HAL/Arduino/stm32/HalI2C.h"
+#include "HAL/Arduino/stm32/HalSystem.h"
+#include "HAL/Arduino/stm32/HalUART.h"
 
 #else
 
@@ -14,4 +14,4 @@
 
 #endif
 
-#include "HalI2CDevice.h"
+#include "HAL/HalI2CDevice.h"

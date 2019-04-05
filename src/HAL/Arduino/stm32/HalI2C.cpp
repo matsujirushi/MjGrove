@@ -1,4 +1,6 @@
-#include "HalI2CImpl.h"
+#if defined ARDUINO_ARCH_STM32
+
+#include "HalI2C.h"
 
 void HalI2C::EnableImplement(int frequency)
 {
@@ -27,3 +29,5 @@ int HalI2C::ReadImplement(int slaveAddress, uint8_t* data, int dataSize)
 
 	return readSize;
 }
+
+#endif // ARDUINO_ARCH_STM32
