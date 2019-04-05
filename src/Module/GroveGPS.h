@@ -6,7 +6,7 @@
 
 #include "Abstract/GroveModule.h"
 #include "../Connector/GroveConnectorUART.h"
-//#include <string>	// TODO
+#include <string>
 
 class GroveGPS : public GroveModule
 {

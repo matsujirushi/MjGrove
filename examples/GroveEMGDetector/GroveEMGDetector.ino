@@ -12,9 +12,7 @@ GroveEMGDetector Detector(&Board.A6);
 
 void setup() {
   delay(200);
-#if !defined ARDUINO_STM32F4_WIO_GPS
   SerialUSB.begin(115200);
-#endif
 
   Wio.Init();
   Wio.PowerSupplyGrove(true);

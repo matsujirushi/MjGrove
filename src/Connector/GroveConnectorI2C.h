@@ -15,7 +15,7 @@ public:
 
 	void Enable()
 	{
-		_I2C.Enable(100000);
+		_I2C.Enable();
 	}
 
 	HalI2CDevice* NewDevice(uint8_t slaveAddress)

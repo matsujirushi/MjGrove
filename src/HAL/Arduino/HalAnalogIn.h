@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../HalAnalogInBase.h"
+#include "../HalAnalogInBase.h"
 #include <Arduino.h>
 
 class HalAnalogIn : public HalAnalogInBase

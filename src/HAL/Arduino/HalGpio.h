@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../HalGpioBase.h"
+#include "../HalGpioBase.h"
 #include <Arduino.h>
 
 class HalGpio : public HalGpioBase

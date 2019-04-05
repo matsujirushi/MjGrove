@@ -6,7 +6,6 @@
 
 #include "Abstract/GroveModule.h"
 #include "../Connector/GroveConnectorUART.h"
-//#include <string>	// TODO
 
 class GroveSpeechRecognizer : public GroveModule
 {

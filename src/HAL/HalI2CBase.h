@@ -5,9 +5,9 @@
 class HalI2CBase
 {
 public:
-	void Enable(int frequency)
+	void Enable()
 	{
-		EnableImplement(frequency);
+		EnableImplement();
 	}
 
 	void Write(int slaveAddress, const uint8_t* data, int dataSize)
@@ -21,7 +21,7 @@ public:
 	}
 
 protected:
-	virtual void EnableImplement(int frequency) = 0;
+	virtual void EnableImplement() = 0;
 	virtual void WriteImplement(int slaveAddress, const uint8_t* data, int dataSize) = 0;
 	virtual int ReadImplement(int slaveAddress, uint8_t* data, int dataSize) = 0;
 

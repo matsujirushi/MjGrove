@@ -1,12 +1,12 @@
 #pragma once
 
-#if defined ARDUINO_ARCH_STM32
+#if defined ARDUINO_ARCH_STM32F4 || defined ARDUINO_ARCH_STM32
 
-#include "HAL/Arduino/stm32/HalGpio.h"
-#include "HAL/Arduino/stm32/HalAnalogIn.h"
-#include "HAL/Arduino/stm32/HalI2C.h"
-#include "HAL/Arduino/stm32/HalSystem.h"
-#include "HAL/Arduino/stm32/HalUART.h"
+#include "HAL/Arduino/HalGpio.h"
+#include "HAL/Arduino/HalAnalogIn.h"
+#include "HAL/Arduino/HalI2C.h"
+#include "HAL/Arduino/HalSystem.h"
+#include "HAL/Arduino/HalUART.h"
 
 #else
 

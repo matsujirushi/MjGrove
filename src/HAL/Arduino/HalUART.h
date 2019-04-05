@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../HalUARTBase.h"
+#include "../HalUARTBase.h"
 #include <Arduino.h>
 
 class HalUART : public HalUARTBase

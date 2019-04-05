@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../HalI2CBase.h"
+#include "../HalI2CBase.h"
 #include <Wire.h>
 
 class HalI2C : public HalI2CBase
@@ -14,7 +14,7 @@ public:
 	}
 
 protected:
-	virtual void EnableImplement(int frequency);
+	virtual void EnableImplement();
 	virtual void WriteImplement(int slaveAddress, const uint8_t* data, int dataSize);
 	virtual int ReadImplement(int slaveAddress, uint8_t* data, int dataSize);
 

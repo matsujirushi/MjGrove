@@ -1,4 +1,4 @@
-#if defined ARDUINO_ARCH_STM32
+#if defined ARDUINO_ARCH_STM32F4 || defined ARDUINO_ARCH_STM32
 
 #include "HalUART.h"
 
@@ -39,4 +39,4 @@ uint8_t HalUART::ReadImplement()
 	return _Serial->read();
 }
 
-#endif // ARDUINO_ARCH_STM32
+#endif // ARDUINO_ARCH_STM32F4 || ARDUINO_ARCH_STM32

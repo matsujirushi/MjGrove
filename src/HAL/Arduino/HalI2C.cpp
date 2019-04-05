@@ -1,11 +1,10 @@
-#if defined ARDUINO_ARCH_STM32
+#if defined ARDUINO_ARCH_STM32F4 || defined ARDUINO_ARCH_STM32
 
 #include "HalI2C.h"
 
-void HalI2C::EnableImplement(int frequency)
+void HalI2C::EnableImplement()
 {
 	_Wire->begin();
-	_Wire->setClock(frequency);
 }
 
 void HalI2C::WriteImplement(int slaveAddress, const uint8_t* data, int dataSize)
@@ -30,4 +29,4 @@ int HalI2C::ReadImplement(int slaveAddress, uint8_t* data, int dataSize)
 	return readSize;
 }
 
-#endif // ARDUINO_ARCH_STM32
+#endif // ARDUINO_ARCH_STM32F4 || ARDUINO_ARCH_STM32
