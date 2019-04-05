@@ -1,5 +1,4 @@
 #include "GroveTempHumiBaroBME280.h"
-#include "Abstract/GroveModuleError.h"
 
 #define BME280_REG_CHIPID		(0xD0)
 #define BME280_REG_CONTROLHUMID	(0xF2)
@@ -77,7 +76,7 @@ uint32_t GroveTempHumiBaroBME280::ReadReg24(uint8_t reg)
 
 void GroveTempHumiBaroBME280::Init()
 {
-	if (ReadReg8(BME280_REG_CHIPID) != 0x60) GROVE_MODULE_ERROR("exception");
+	if (ReadReg8(BME280_REG_CHIPID) != 0x60) HalSystem::Abort();
 
 	dig_T1 = ReadReg16LE(BME280_REG_DIG_T1);
 	dig_T2 = ReadRegS16LE(BME280_REG_DIG_T2);

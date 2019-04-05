@@ -1,5 +1,4 @@
 #include "GroveI2CColorSensor2.h"
-#include "Abstract/GroveModuleError.h"
 
 #define TCS34725_COMMAND_BIT      (0x80)
 
@@ -68,7 +67,7 @@ void GroveI2CColorSensor2::getRawData(uint16_t* r, uint16_t* g, uint16_t* b, uin
 void GroveI2CColorSensor2::Init()
 {
 	uint8_t x = read8(TCS34725_ID);
-	if (x != 0x44 && x != 0x10) GROVE_MODULE_ERROR("exception");
+	if (x != 0x44 && x != 0x10) HalSystem::Abort();
 
 	enable();
 
@@ -105,7 +104,7 @@ void GroveI2CColorSensor2::SetGain(int gain)
 		gainValue = 0x03;
 		break;
 	default:
-		GROVE_MODULE_ERROR("exception");
+		HalSystem::Abort();
 	}
 
 	write8(TCS34725_CONTROL, gainValue);

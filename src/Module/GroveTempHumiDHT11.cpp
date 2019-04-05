@@ -1,5 +1,4 @@
 #include "GroveTempHumiDHT11.h"
-#include "Abstract/GroveModuleError.h"
 #include "../HAL/Hal.h"
 
 void GroveTempHumiDHT11::DHT11Init(HalGpio* gpio)
@@ -79,7 +78,7 @@ void GroveTempHumiDHT11::Read()
 	for (int i = 0; i < 5; i++) data[i] = DHT11ReadByte(_Pin);
 	DHT11Finish(_Pin);
 
-	if (!DHT11Check(data, sizeof(data)) || data[1] >= 10 || data[3] >= 10) GROVE_MODULE_ERROR("exception");
+	if (!DHT11Check(data, sizeof(data)) || data[1] >= 10 || data[3] >= 10) HalSystem::Abort();
 
 	Humidity = (float)data[0] + (float)data[1] / 10.0f;
 	Temperature = (float)data[2] + (float)data[3] / 10.0f;

@@ -1,5 +1,4 @@
 #include "GroveTempOneWire.h"
-#include "Abstract/GroveModuleError.h"
 #include "../HAL/Hal.h"
 
 void GroveTempOneWire::PinWrite(int value)
@@ -157,18 +156,18 @@ void GroveTempOneWire::Init()
 
 void GroveTempOneWire::Read()
 {
-	if (!OneWireReset()) GROVE_MODULE_ERROR("exception");
-	if (!OneWireSkipRom()) GROVE_MODULE_ERROR("exception");
-	if (!OneWireWriteScratchpad(0x7f, 0x80, 0x7f)) GROVE_MODULE_ERROR("exception");	// 750ms (12bits)
+	if (!OneWireReset()) HalSystem::Abort();
+	if (!OneWireSkipRom()) HalSystem::Abort();
+	if (!OneWireWriteScratchpad(0x7f, 0x80, 0x7f)) HalSystem::Abort();	// 750ms (12bits)
 
-	if (!OneWireReset()) GROVE_MODULE_ERROR("exception");
-	if (!OneWireSkipRom()) GROVE_MODULE_ERROR("exception");
-	if (!OneWireConvertT()) GROVE_MODULE_ERROR("exception");
+	if (!OneWireReset()) HalSystem::Abort();
+	if (!OneWireSkipRom()) HalSystem::Abort();
+	if (!OneWireConvertT()) HalSystem::Abort();
 
-	if (!OneWireReset()) GROVE_MODULE_ERROR("exception");
-	if (!OneWireSkipRom()) GROVE_MODULE_ERROR("exception");
+	if (!OneWireReset()) HalSystem::Abort();
+	if (!OneWireSkipRom()) HalSystem::Abort();
 	uint8_t data[9];
-	if (OneWireReadScratchpad(data, sizeof(data)) != 9) GROVE_MODULE_ERROR("exception");
+	if (OneWireReadScratchpad(data, sizeof(data)) != 9) HalSystem::Abort();
 
 	int16_t value;
 	((uint8_t*)&value)[0] = data[0];

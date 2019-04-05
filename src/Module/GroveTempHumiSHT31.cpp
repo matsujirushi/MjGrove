@@ -1,5 +1,4 @@
 #include "GroveTempHumiSHT31.h"
-#include "Abstract/GroveModuleError.h"
 #include "../HAL/Hal.h"
 
 #define POLYNOMIAL			(0x31)
@@ -44,10 +43,10 @@ void GroveTempHumiSHT31::Read()
 	HalSystem::DelayMs(15);
 
 	uint8_t readData[6];
-	if (_Device->Read(readData, sizeof(readData)) != 6) GROVE_MODULE_ERROR("exception");
+	if (_Device->Read(readData, sizeof(readData)) != 6) HalSystem::Abort();
 
-	if (readData[2] != CalcCRC8(&readData[0], 2)) GROVE_MODULE_ERROR("exception");
-	if (readData[5] != CalcCRC8(&readData[3], 2)) GROVE_MODULE_ERROR("exception");
+	if (readData[2] != CalcCRC8(&readData[0], 2)) HalSystem::Abort();
+	if (readData[5] != CalcCRC8(&readData[3], 2)) HalSystem::Abort();
 
 	uint16_t ST;
 	ST = readData[0];

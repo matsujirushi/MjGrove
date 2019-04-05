@@ -27,4 +27,9 @@ public:
 		return micros();
 	}
 
+	static void Abort()
+	{
+		abort();
+	}
+
 };

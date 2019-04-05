@@ -1,5 +1,4 @@
 #include "GroveAccelerometer16G.h"
-#include "Abstract/GroveModuleError.h"
 #include <math.h>
 
 #define REG_POWER_CTL (0x2d)
@@ -13,7 +12,7 @@ void GroveAccelerometer16G::Init()
 void GroveAccelerometer16G::Read()
 {
 	uint8_t readData[6];
-	if (_Device->ReadRegN(REG_DATAX0, readData, sizeof(readData)) != 6) GROVE_MODULE_ERROR("exception");
+	if (_Device->ReadRegN(REG_DATAX0, readData, sizeof(readData)) != 6) HalSystem::Abort();
 
 	int16_t val;
 
