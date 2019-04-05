@@ -1,7 +1,7 @@
 #pragma once
 
 #include "GroveConnector.h"
-#include "../HAL2/Hal.h"
+#include "../HAL/Hal.h"
 
 class GroveConnectorAnalogIn : public GroveConnector
 {

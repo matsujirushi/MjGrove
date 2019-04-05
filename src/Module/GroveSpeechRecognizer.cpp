@@ -2,7 +2,6 @@
 
 void GroveSpeechRecognizer::Init()
 {
-	_UART->SetMode(9600, 8, HalUART::PARITY_NONE, 1);
 }
 
 void GroveSpeechRecognizer::AttachCommandReceived(void(*callback)(COMMAND_TYPE command))
@@ -12,7 +11,7 @@ void GroveSpeechRecognizer::AttachCommandReceived(void(*callback)(COMMAND_TYPE c
 
 void GroveSpeechRecognizer::DoWork()
 {
-	if (_UART->Available() >= 1)
+	if (_UART->ReadAvailable() >= 1)
 	{
 		uint8_t cmd = _UART->Read();
 		if (cmd < 1 || 22 < cmd) cmd = 0;

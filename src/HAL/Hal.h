@@ -6,6 +6,7 @@
 #include "Arduino/stm32/HalAnalogInImpl.h"
 #include "Arduino/stm32/HalI2CImpl.h"
 #include "Arduino/stm32/HalSystemImpl.h"
+#include "Arduino/stm32/HalUARTImpl.h"
 
 #else
 

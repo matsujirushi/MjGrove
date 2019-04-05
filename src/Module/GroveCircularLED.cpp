@@ -1,5 +1,5 @@
 #include "GroveCircularLED.h"
-#include "../HAL2/Hal.h"
+#include "../HAL/Hal.h"
 
 void GroveCircularLED::SendData(uint16_t data)
 {

@@ -1,10 +1,6 @@
-#include "HalUART.h"
+#include "HalUARTImpl.h"
 
-void HalUART::Enable()
-{
-}
-
-void HalUART::SetMode(int baudRate, int dataBit, HalUART::ParityType parity, int stopBit)
+void HalUART::EnableImplement(int baudRate, int dataBit, ParityType parity, int stopBit)
 {
 	if (dataBit == 8 && parity == PARITY_NONE && stopBit == 1)
 	{
@@ -20,4 +16,23 @@ void HalUART::SetMode(int baudRate, int dataBit, HalUART::ParityType parity, int
 		_Serial->begin(baudRate, SERIAL_8E1);
 	}
 #endif
+	else
+	{
+		abort();
+	}
+}
+
+void HalUART::WriteImplement(uint8_t data)
+{
+	_Serial->write(data);
+}
+
+int HalUART::ReadAvailableImplement()
+{
+	return _Serial->available();
+}
+
+uint8_t HalUART::ReadImplement()
+{
+	return _Serial->read();
 }

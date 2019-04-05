@@ -22,7 +22,7 @@ void setup() {
   Wio.PowerSupplyGrove(true);
   delay(500);
   
-  Board.UART.Enable();
+  Board.UART.Enable(9600, 8, HalUART::PARITY_NONE, 1);
   Speech.Init();
   
   Speech.AttachCommandReceived(CommandReceived);

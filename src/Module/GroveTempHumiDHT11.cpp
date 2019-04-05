@@ -1,6 +1,6 @@
 #include "GroveTempHumiDHT11.h"
 #include "Abstract/GroveModuleError.h"
-#include "../HAL2/Hal.h"
+#include "../HAL/Hal.h"
 
 void GroveTempHumiDHT11::DHT11Init(HalGpio* gpio)
 {

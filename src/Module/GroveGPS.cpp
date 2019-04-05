@@ -2,7 +2,6 @@
 
 void GroveGPS::Init()
 {
-	_UART->SetMode(9600, 8, HalUART::PARITY_NONE, 1);
 }
 
 void GroveGPS::AttachMessageReceived(void (*callback)(const char* message))
@@ -12,7 +11,7 @@ void GroveGPS::AttachMessageReceived(void (*callback)(const char* message))
 
 void GroveGPS::DoWork()
 {
-	if (_UART->Available() >= 1)
+	if (_UART->ReadAvailable() >= 1)
 	{
 		char c = _UART->Read();
 		switch (c)

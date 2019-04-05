@@ -1,5 +1,5 @@
 #include "GroveUltrasonicRanger.h"
-#include "../HAL2/Hal.h"
+#include "../HAL/Hal.h"
 
 unsigned long GroveUltrasonicRanger::MicrosDiff(unsigned long begin, unsigned long end)
 {

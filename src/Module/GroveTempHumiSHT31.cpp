@@ -1,6 +1,6 @@
 #include "GroveTempHumiSHT31.h"
 #include "Abstract/GroveModuleError.h"
-#include "../HAL2/Hal.h"
+#include "../HAL/Hal.h"
 
 #define POLYNOMIAL			(0x31)
 
