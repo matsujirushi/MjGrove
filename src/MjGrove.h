@@ -41,7 +41,7 @@
 
 // Board
 
-#if defined ARDUINO_STM32F4_WIO_GPS
+#if defined ARDUINO_WIO_LTE
 #include "Board/STM32F4_WIO_GPS/GroveBoard.h"
 #elif defined ARDUINO_WIO_3G
 #include "Board/WIO_3G/GroveBoard.h"

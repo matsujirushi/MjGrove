@@ -1,6 +1,6 @@
 #pragma once
 
-#if defined ARDUINO_STM32F4_WIO_GPS
+#if defined ARDUINO_WIO_LTE
 
 #include <WioLTEforArduino.h>	// https://github.com/SeeedJP/WioLTEforArduino
 #include <Wire.h>
@@ -32,4 +32,4 @@ public:
 
 };
 
-#endif // ARDUINO_STM32F4_WIO_GPS
+#endif // ARDUINO_WIO_LTE

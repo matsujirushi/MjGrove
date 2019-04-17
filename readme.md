@@ -13,12 +13,13 @@ Groveƒ‚ƒWƒ…[ƒ‹‚ÌƒNƒ‰ƒX‚ÆAGrove‘Î‰ƒ{[ƒh‚ÌƒNƒ‰ƒX‚ª—pˆÓ‚³‚ê‚Ä‚¨‚èA‚±‚Ì2‚Â‚ÌƒNƒ
 |:--|:--|:--|:--|:--|
 |[Wio LTE JP Version](https://seeedjp.github.io/Wiki/Wio_LTE_for_Arduino/Home-ja.html)|Seeed STM32F4 Boards by Seeed Studio|Wio LTE Arduino Library by Seeed Studio|~|Seeed–{Ğ|
 ||Seeed STM32F4 Boards by Seeed Studio|Wio LTE for Arduino by Seeed K.K.|~|ƒfƒBƒXƒRƒ“|
-||Seeed STM32F4 Board (JP mirror) by Seeed K.K.|Wio LTE for Arduino by Seeed K.K.|›|
+||Seeed STM32F4 Board (JP mirror) by Seeed K.K.|Wio LTE for Arduino by Seeed K.K.|~|
+||**SeeedJP STM32 Boards by Seeed K.K.**|**Wio LTE for Arduino by Seeed K.K.**|›|
 |[Wio 3G SORACOM Edition](https://soracom.jp/products/module/wio_3g_soracom_edition/)|SeeedJP STM32F4 Boards by Seeed K.K.|Wio 3G for Arduino by Seeed K.K.|~|ƒfƒBƒXƒRƒ“|
 ||SeeedJP STM32F4 Boards by Seeed K.K.|Wio cell lib for Arduino by Seeed K.K.|~|
-||SeeedJP STM32 Boards by Seeed K.K.|Wio cell lib for Arduino by Seeed K.K.|›|
+||**SeeedJP STM32 Boards by Seeed K.K.**|**Wio cell lib for Arduino by Seeed K.K.**|›|
 |[Wio LTE M1/NB1(BG96)](https://soracom.jp/products/module/wio_lte_m1_nb1/)|SeeedJP STM32F4 Boards by Seeed K.K.|Wio cell lib for Arduino by Seeed K.K.|~|
-||SeeedJP STM32 Boards by Seeed K.K.|Wio cell lib for Arduino by Seeed K.K.|›|
+||**SeeedJP STM32 Boards by Seeed K.K.**|**Wio cell lib for Arduino by Seeed K.K.**|›|
 
 ### Groveƒ‚ƒWƒ…[ƒ‹
 
