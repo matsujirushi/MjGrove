@@ -39,6 +39,10 @@
 //#include "Module/GroveAirQuality.h"
 #include "Module/GroveI2CColorSensor2.h"
 
+// Extenson
+
+#include "Extension/WioExtRTC.h"
+
 // Board
 
 #if defined ARDUINO_WIO_LTE

@@ -32,3 +32,15 @@ int HalI2CDevice::ReadRegN(uint8_t reg, uint8_t* data, int dataSize)
 
 	return _I2C->Read(_SlaveAddress, data, dataSize);
 }
+
+bool HalI2CDevice::ChangeReg8(uint8_t reg, uint8_t andVal, uint8_t orVal)
+{
+	uint8_t val;
+	if (ReadReg8(reg, &val) != 1) return false;
+
+	val = (val & andVal) | orVal;
+
+	WriteReg8(reg, val);
+
+	return true;
+}

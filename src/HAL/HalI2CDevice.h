@@ -29,4 +29,6 @@ public:
 	int ReadReg8(uint8_t reg, uint8_t* data);
 	int ReadRegN(uint8_t reg, uint8_t* data, int dataSize);
 
+	bool ChangeReg8(uint8_t reg, uint8_t andVal, uint8_t orVal);
+
 };
