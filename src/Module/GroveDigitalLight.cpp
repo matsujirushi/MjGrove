@@ -206,7 +206,7 @@ static uint16_t CalculateLux(int iGain, int tInt, uint16_t ch0, uint16_t ch1, in
 	switch (iType)
 	{
 	case 0: // T, FN and CL package
-		if ((ratio >= 0) && (ratio <= K1T))
+		if (ratio <= K1T)
 		{
 			b = B1T; m = M1T;
 		}
@@ -241,7 +241,7 @@ static uint16_t CalculateLux(int iGain, int tInt, uint16_t ch0, uint16_t ch1, in
 		break;
 
 	case 1:// CS package
-		if ((ratio >= 0) && (ratio <= K1C))
+		if (ratio <= K1C)
 		{
 			b = B1C; m = M1C;
 		}
@@ -278,9 +278,6 @@ static uint16_t CalculateLux(int iGain, int tInt, uint16_t ch0, uint16_t ch1, in
 
 	unsigned long temp;
 	temp = ((channel0 * b) - (channel1 * m));
-
-	// do not allow negative lux value
-	if (temp < 0) temp = 0;
 
 	// round lsb (2^(LUX_SCALE−1))
 	temp += (1 << (LUX_SCALE-1));
