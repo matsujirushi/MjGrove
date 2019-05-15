@@ -38,6 +38,7 @@
 #include "Module/GroveSpeechRecognizer.h"
 //#include "Module/GroveAirQuality.h"
 #include "Module/GroveI2CColorSensor2.h"
+#include "Module/OmronBaro2SMPB02E.h"
 
 // Extenson
 
