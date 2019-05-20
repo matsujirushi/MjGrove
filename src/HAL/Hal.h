@@ -8,6 +8,14 @@
 #include "HAL/Arduino/HalSystem.h"
 #include "HAL/Arduino/HalUART.h"
 
+#elif defined ARDUINO_ARCH_SEEEDJP_REBUTTON
+
+#include "HAL/Arduino/HalGpio.h"
+#include "HAL/Arduino/HalAnalogIn.h"
+#include "HAL/Arduino/HalI2C.h"
+#include "HAL/Arduino/HalSystem.h"
+#include "HAL/Arduino/HalUART.h"
+
 #else
 
 #error "This platform is not supported."
