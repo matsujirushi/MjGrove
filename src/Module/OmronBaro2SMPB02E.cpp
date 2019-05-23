@@ -55,10 +55,117 @@ static float CompensationCoefficientB(int otp)
 	return otp / 16;
 }
 
+void OmronBaro2SMPB02E::SetTemperatureAverageNumber(int temperatureAverageNumber)
+{
+	_TemperatureAverageNumber = temperatureAverageNumber;
+}
+
+void OmronBaro2SMPB02E::SetPressureAverageNumber(int pressureAverageNumber)
+{
+	_PressureAverageNumber = pressureAverageNumber;
+}
+
+void OmronBaro2SMPB02E::SetStandbyTime(STANDBY_TIME standbyTime)
+{
+	_StandbyTime = standbyTime;
+}
+
 void OmronBaro2SMPB02E::Init()
 {
-	_Device->WriteReg8(REG_IO_SETUP, 0x00);
-	HalSystem::DelayMs(500);
+	uint8_t temp_average;
+	switch (_TemperatureAverageNumber)
+	{
+	case 0:
+		temp_average = 0b000;
+		break;
+	case 1:
+		temp_average = 0b001;
+		break;
+	case 2:
+		temp_average = 0b010;
+		break;
+	case 4:
+		temp_average = 0b011;
+		break;
+	case 8:
+		temp_average = 0b100;
+		break;
+	case 16:
+		temp_average = 0b101;
+		break;
+	case 32:
+		temp_average = 0b110;
+		break;
+	case 64:
+		temp_average = 0b111;
+		break;
+	default:
+		HalSystem::Abort();
+	}
+
+	uint8_t press_average;
+	switch (_PressureAverageNumber)
+	{
+	case 0:
+		press_average = 0b000;
+		break;
+	case 1:
+		press_average = 0b001;
+		break;
+	case 2:
+		press_average = 0b010;
+		break;
+	case 4:
+		press_average = 0b011;
+		break;
+	case 8:
+		press_average = 0b100;
+		break;
+	case 16:
+		press_average = 0b101;
+		break;
+	case 32:
+		press_average = 0b110;
+		break;
+	case 64:
+		press_average = 0b111;
+		break;
+	default:
+		HalSystem::Abort();
+	}
+
+	uint8_t t_standby;
+	switch (_StandbyTime)
+	{
+	case STANDBY_1MS:
+		t_standby = 0b000;
+		break;
+	case STANDBY_5MS:
+		t_standby = 0b001;
+		break;
+	case STANDBY_50MS:
+		t_standby = 0b010;
+		break;
+	case STANDBY_250MS:
+		t_standby = 0b011;
+		break;
+	case STANDBY_500MS:
+		t_standby = 0b100;
+		break;
+	case STANDBY_1S:
+		t_standby = 0b101;
+		break;
+	case STANDBY_2S:
+		t_standby = 0b110;
+		break;
+	case STANDBY_4S:
+		t_standby = 0b111;
+		break;
+	default:
+		HalSystem::Abort();
+	}
+
+	_Device->WriteReg8(REG_IO_SETUP, t_standby << 5);
 
 	uint8_t coe_a2[2];
 	uint8_t coe_a1[2];
@@ -102,13 +209,23 @@ void OmronBaro2SMPB02E::Init()
 	_bt1 = CompensationCoefficientA(1.0E-01, 9.1E-02, TwosComplementValue((coe_bt1[0] << 8) + coe_bt1[1], 16));
 	_b00 = CompensationCoefficientB(TwosComplementValue((coe_b00[0] << 12) + (coe_b00[1] << 4) + ((coe_b00_a0_ex[0] >> 4) & 0x0f), 20));
 
-	_Device->WriteReg8(REG_CTRL_MEAS, 0x27);
+	_Device->WriteReg8(REG_CTRL_MEAS, temp_average << 5 | press_average << 2 | 0b11);	// POWER_MODE = NORMAL
 }
 
 void OmronBaro2SMPB02E::Read()
 {
 	uint8_t press_and_temp[6];
 	if (_Device->ReadRegN(REG_PRESS_TXD2, press_and_temp, sizeof(press_and_temp)) != sizeof(press_and_temp)) HalSystem::Abort();
+
+	uint8_t all_or = 0;
+	for (unsigned i = 0; i < sizeof(press_and_temp); i++) all_or |= press_and_temp[i];
+	if (all_or == 0)
+	{
+		Temperature = NAN;
+		Pressure = NAN;
+		return;
+	}
+
 	int dp = ((press_and_temp[0] << 16) + (press_and_temp[1] << 8) + press_and_temp[2]) - (1 << 23);
 	int dt = ((press_and_temp[3] << 16) + (press_and_temp[4] << 8) + press_and_temp[5]) - (1 << 23);
 
