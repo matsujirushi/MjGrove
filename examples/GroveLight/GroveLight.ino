@@ -23,8 +23,8 @@ void setup() {
 }
 
 void loop() {
-  int lightLevel = Light.Value();
-  SerialUSB.println(lightLevel);
+  Light.Read();
+  SerialUSB.println(Light.Value * 100, 0);
   
   delay(INTERVAL);
 }
