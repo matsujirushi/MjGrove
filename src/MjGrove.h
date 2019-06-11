@@ -17,7 +17,7 @@
 #include "Module/GroveButton.h"
 #include "Module/GroveLight.h"
 #include "Module/GroveAccelerometer16G.h"
-#include "Module/GroveAccelerometer015G.h"
+//#include "Module/GroveAccelerometer015G.h"
 #include "Module/GroveTempHumiDHT11.h"
 #include "Module/GroveTempHumiDHT22.h"
 #include "Module/GroveMagneticSwitch.h"
