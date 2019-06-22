@@ -1,12 +1,12 @@
 // BOARD Seeed Wio 3G
-// GROVE D38 <-> Grove - Tilt (SKU#101020025)
+// GROVE D38 <-> Grove - Tilt Switch (SKU#101020025)
 
 #include <MjGrove.h>
 
 #define INTERVAL    (100)
 
 GroveBoard Board;
-GroveTilt Tilt(&Board.D38);
+GroveTiltSwitch Tilt(&Board.D38);
 
 void setup() {
   delay(200);

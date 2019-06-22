@@ -14,7 +14,7 @@
 // Module
 
 #include "Module/GroveBuzzer.h"
-#include "Module/GroveTilt.h"
+#include "Module/GroveTiltSwitch.h"
 #include "Module/GroveButton.h"
 #include "Module/GroveLight.h"
 #include "Module/GroveAccelerometer16G.h"
