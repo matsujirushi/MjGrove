@@ -43,6 +43,7 @@
 //#include "Module/GroveAirQuality.h"
 #include "Module/GroveI2CColorSensor2.h"
 #include "Module/OmronBaro2SMPB02E.h"
+#include "Module/GroveTempHumiSHT35.h"
 
 // Extenson
 
