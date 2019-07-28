@@ -4,29 +4,13 @@
 
 #pragma once
 
-#include "Abstract/GroveModule.h"
-#include "../Connector/GroveConnectorI2C.h"
+#include "Abstract/GroveTempHumiSHT3x.h"
 
-class GroveTempHumiSHT31 : public GroveModule
+class GroveTempHumiSHT31 : public GroveTempHumiSHT3x
 {
-private:
-	HalI2CDevice* _Device;
-
-	void SendCommand(uint16_t cmd);
-	static uint8_t CalcCRC8(const uint8_t* data, int dataSize);
-
 public:
-	float Temperature;
-	float Humidity;
-
-public:
-	GroveTempHumiSHT31(GroveConnectorI2C* connector)
+	GroveTempHumiSHT31(GroveConnectorI2C* connector) : GroveTempHumiSHT3x(connector, 0x44)
 	{
-		_Device = connector->NewDevice(0x44);	// I2C_ADDRESS
 	}
-
-	void Init();
-	void Read();
-	void SetHeater(bool on);
 
 };

@@ -1,5 +1,5 @@
-#include "GroveTempHumiSHT31.h"
-#include "../HAL/Hal.h"
+#include "GroveTempHumiSHT3x.h"
+#include "../../HAL/Hal.h"
 
 #define POLYNOMIAL			(0x31)
 
@@ -8,7 +8,7 @@
 #define CMD_HEATER_ON		(0x306d)
 #define CMD_HEATER_OFF		(0x3066)
 
-void GroveTempHumiSHT31::SendCommand(uint16_t cmd)
+void GroveTempHumiSHT3x::SendCommand(uint16_t cmd)
 {
 	uint8_t writeData[2];
 	writeData[0] = cmd >> 8;
@@ -16,7 +16,7 @@ void GroveTempHumiSHT31::SendCommand(uint16_t cmd)
 	_Device->Write(writeData, sizeof(writeData));
 }
 
-uint8_t GroveTempHumiSHT31::CalcCRC8(const uint8_t* data, int dataSize)
+uint8_t GroveTempHumiSHT3x::CalcCRC8(const uint8_t* data, int dataSize)
 {
 	uint8_t crc = 0xff;
 
@@ -33,13 +33,13 @@ uint8_t GroveTempHumiSHT31::CalcCRC8(const uint8_t* data, int dataSize)
 	return crc;
 }
 
-void GroveTempHumiSHT31::Init()
+void GroveTempHumiSHT3x::Init()
 {
 	SendCommand(CMD_SOFT_RESET);
 	HalSystem::DelayMs(1);
 }
 
-void GroveTempHumiSHT31::Read()
+void GroveTempHumiSHT3x::Read()
 {
 	SendCommand(CMD_SINGLE_HIGH);
 	HalSystem::DelayMs(15);
@@ -64,7 +64,7 @@ void GroveTempHumiSHT31::Read()
 	Humidity = (float)SRH * 100 / 0xffff;
 }
 
-void GroveTempHumiSHT31::SetHeater(bool on)
+void GroveTempHumiSHT3x::SetHeater(bool on)
 {
 	SendCommand(on ? CMD_HEATER_ON : CMD_HEATER_OFF);
 }
