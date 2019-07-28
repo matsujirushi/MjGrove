@@ -5,6 +5,8 @@
 
 #define CMD_SOFT_RESET		(0x30a2)
 #define CMD_SINGLE_HIGH		(0x2400)
+#define CMD_HEATER_ON		(0x306d)
+#define CMD_HEATER_OFF		(0x3066)
 
 void GroveTempHumiSHT31::SendCommand(uint16_t cmd)
 {
@@ -60,4 +62,9 @@ void GroveTempHumiSHT31::Read()
 
 	Temperature = (float)ST * 175 / 0xffff - 45;
 	Humidity = (float)SRH * 100 / 0xffff;
+}
+
+void GroveTempHumiSHT31::SetHeater(bool on)
+{
+	SendCommand(on ? CMD_HEATER_ON : CMD_HEATER_OFF);
 }

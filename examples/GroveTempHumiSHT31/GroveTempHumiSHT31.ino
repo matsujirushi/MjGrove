@@ -1,4 +1,4 @@
-// BOARD Seeed Wio 3G
+// BOARD Seeed Wio LTE M1/NB1(BG96)
 // GROVE I2C <-> Grove - Temperature&Humidity Sensor (SHT31) (SKU#101020212)
 
 #include <MjGrove.h>
@@ -23,6 +23,19 @@ void setup() {
 }
 
 void loop() {
+  if (SerialUSB.available() >= 1) {
+    switch (SerialUSB.read()) {
+    case 'H':
+      SerialUSB.println("On heater.");
+      TempHumi.SetHeater(true);
+      break;
+    case 'h':
+      SerialUSB.println("Off heater.");
+      TempHumi.SetHeater(false);
+      break;
+    }
+  }
+  
   TempHumi.Read();
   
   SerialUSB.print("Current humidity = ");
@@ -34,4 +47,3 @@ void loop() {
 
   delay(INTERVAL);
 }
-

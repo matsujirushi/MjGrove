@@ -27,5 +27,6 @@ public:
 
 	void Init();
 	void Read();
+	void SetHeater(bool on);
 
 };
