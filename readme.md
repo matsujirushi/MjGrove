@@ -56,6 +56,7 @@ Groveƒ‚ƒWƒ…[ƒ‹‚ÌƒNƒ‰ƒX‚ÆAGrove‘Î‰ƒ{[ƒh‚ÌƒNƒ‰ƒX‚ª—pˆÓ‚³‚ê‚Ä‚¨‚èA‚±‚Ì2‚Â‚ÌƒNƒ
 |<img src="https://raw.githubusercontent.com/SeeedDocument/Grove-6-Axis_AccelerometerAndGyroscope/master/img/Grove-6-Axis_AccelerometerAndGyroscope_product_view_1200_s.jpg" width="100">|Grove6AxisLSM6DS3|105020012|[Grove - 6-Axis Accelerometer&Gyroscope](http://wiki.seeedstudio.com/Grove-6-Axis_AccelerometerAndGyroscope/)|ŠJ”­—\’è|
 |<img src="https://www.seeedstudio.site/media/catalog/product/cache/ef3164306500b1080e8560b2e8b5cc0f/g/r/grove-temperature-humidity-sensor-pro-am2302-preview.png" width="100">|GroveTempHumiDHT22|101020019|[Grove - Temperature & Humidity Sensor Pro (AM2302/DHT22)](http://wiki.seeedstudio.com/Grove-Temperature_and_Humidity_Sensor_Pro/)||
 |<img src="https://www.seeedstudio.site/media/catalog/product/cache/ef3164306500b1080e8560b2e8b5cc0f/h/t/httpsstatics3.seeedstudio.comseeedfile2018-10bazaar951701_11400x1050.jpg" width="100">|GroveTempHumiSHT35|101020592|[Grove - I2C High Accuracy Temp&Humi Sensor (SHT35)](http://wiki.seeedstudio.com/Grove-I2C_High_Accuracy_Temp%26Humi_Sensor-SHT35/)||
+|<img src="https://www.seeedstudio.site/media/catalog/product/cache/ef3164306500b1080e8560b2e8b5cc0f/h/t/httpsstatics3.seeedstudio.comseeedfile2018-10bazaar969249_front.jpg" width="100">|GroveLCD1602|104020111,104020112,104020113|[Grove - 16x2 LCD](http://wiki.seeedstudio.com/Grove-16x2_LCD_Series/)||
 
 ### Grove‚Á‚Û‚¢ƒ‚ƒWƒ…[ƒ‹
 
