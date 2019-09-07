@@ -17,11 +17,6 @@ public:
 		delayMicroseconds(microSeconds);
 	}
 
-	static uint32_t ClockMs()	// TODO
-	{
-		return millis();
-	}
-
 	static uint32_t ClockUs()	// TODO
 	{
 		return micros();
