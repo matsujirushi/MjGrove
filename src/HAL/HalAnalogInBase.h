@@ -17,4 +17,7 @@ protected:
 	virtual void EnableImplement() = 0;
 	virtual float ReadImplement() = 0;
 
+public:
+	virtual ~HalAnalogInBase() {}
+
 };

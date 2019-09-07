@@ -44,4 +44,7 @@ protected:
 	virtual void WriteImplement(bool high) = 0;
 	virtual bool ReadImplement() const = 0;
 
+public:
+	virtual ~HalGpioBase() {}
+
 };
