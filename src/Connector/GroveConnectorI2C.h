@@ -9,7 +9,7 @@ private:
 	HalI2C _I2C;
 
 public:
-	GroveConnectorI2C(TwoWire* wire) : _I2C(wire)
+	GroveConnectorI2C(HalPlatformI2CType* i2c) : _I2C(i2c)
 	{
 	}
 

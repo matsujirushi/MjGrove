@@ -33,7 +33,7 @@ void GroveUltrasonicRanger::Read()
 {
 	_Pin->Enable(HalGpio::MODE_OUTPUT);
 	_Pin->Write(true);
-	delayMicroseconds(10);
+	HalSystem::DelayUs(10);
 
 	_Pin->Write(false);
 	_Pin->Enable(HalGpio::MODE_INPUT);

@@ -10,7 +10,7 @@ public:
 	HalGpio P2;
 
 public:
-	GroveConnectorDIO(int pin1, int pin2) : P1(pin1), P2(pin2)
+	GroveConnectorDIO(HalPlatformPinType pin1, HalPlatformPinType pin2) : P1(pin1), P2(pin2)
 	{
 	}
 

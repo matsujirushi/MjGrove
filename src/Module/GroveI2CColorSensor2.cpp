@@ -1,4 +1,5 @@
 #include "GroveI2CColorSensor2.h"
+#include "../HAL/Hal.h"
 
 #define TCS34725_COMMAND_BIT      (0x80)
 
@@ -52,7 +53,7 @@ uint16_t GroveI2CColorSensor2::read16(uint8_t reg)
 void GroveI2CColorSensor2::enable()
 {
 	write8(TCS34725_ENABLE, TCS34725_ENABLE_PON);
-	delay(3);
+	HalSystem::DelayMs(3);
 	write8(TCS34725_ENABLE, TCS34725_ENABLE_PON | TCS34725_ENABLE_AEN);
 }
 

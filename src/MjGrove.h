@@ -19,13 +19,9 @@
 #include "Module/GroveLight.h"
 #include "Module/GroveAccelerometer16G.h"
 //#include "Module/GroveAccelerometer015G.h"
-#include "Module/GroveTempHumiDHT11.h"
-#include "Module/GroveTempHumiDHT22.h"
 #include "Module/GroveMagneticSwitch.h"
-#include "Module/GroveUltrasonicRanger.h"
 #include "Module/GroveGPS.h"
 #include "Module/GroveRotaryAngle.h"
-#include "Module/GroveOLEDDisplay096.h"
 #include "Module/GroveTempHumiSHT31.h"
 #include "Module/GroveHighTemp.h"
 #include "Module/GroveTempOneWire.h"
@@ -44,7 +40,16 @@
 #include "Module/GroveI2CColorSensor2.h"
 #include "Module/OmronBaro2SMPB02E.h"
 #include "Module/GroveTempHumiSHT35.h"
+
+#if defined ARDUINO_ARCH_STM32F4 || defined ARDUINO_ARCH_STM32
+
+#include "Module/GroveTempHumiDHT11.h"
+#include "Module/GroveTempHumiDHT22.h"
+#include "Module/GroveUltrasonicRanger.h"
+#include "Module/GroveOLEDDisplay096.h"
 #include "Module/GroveLCD1602.h"
+
+#endif // ARDUINO_ARCH_STM32F4 || ARDUINO_ARCH_STM32
 
 // Extenson
 

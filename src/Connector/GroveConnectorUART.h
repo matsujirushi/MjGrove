@@ -9,7 +9,7 @@ public:
 	HalUART UART;
 
 public:
-	GroveConnectorUART(HardwareSerial* serial) : UART(serial)
+	GroveConnectorUART(HalPlatformUartType* serial) : UART(serial)
 	{
 	}
 

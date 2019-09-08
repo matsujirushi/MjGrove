@@ -10,7 +10,7 @@ public:
 	HalAnalogIn P2;
 
 public:
-	GroveConnectorAnalogIn(int pin1, int pin2) : P1(pin1), P2(pin2)
+	GroveConnectorAnalogIn(HalPlatformPinType pin1, HalPlatformPinType pin2) : P1(pin1), P2(pin2)
 	{
 	}
 
